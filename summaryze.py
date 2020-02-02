@@ -13,24 +13,38 @@ License: GNU GENERAL PUBLIC LICENSE (GPL)
 """
 
 
-def get_titles(url):
-    html_doc = download_page(url)
+def get_titles(html_doc):
+    """
+    Extracts and returns a list of titles from an HTML page.
+    :param html_doc: is a page to extract titles
+    :return: a list of titles
+    """
+
     soup = BeautifulSoup(html_doc, 'html.parser')
     content_page = soup.find('div', {'class': 'post-body'})
 
     if content_page is None:
-        raise ValueError(f'"{url}" isn\'t a valid blogspot page format!')
+        raise ValueError(f'Blogspot article format not detected')
 
     titles = content_page.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+
+    if len(titles) == 0:
+        raise ValueError('No title found for this page')
 
     return titles
 
 
 def download_page(url):
+    """
+    Downloads HTML pages for valid URLs.
+    :param url: to download an HTML content
+    :return: an HTML page as string
+    """
+
     url_pattern = r"\b((http|https):\/\/?)[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|\/?))"
 
     if not re.match(url_pattern, url):
-        raise ConnectionError(f'Invalid URL format for "{url}')
+        raise ConnectionError(f'Invalid URL format for "{url}"')
 
     try:
         request = requests.get(url)
@@ -84,10 +98,14 @@ def get_summary(titles):
 
 
 def main():
-    url = input('URL: ')
-    titles = get_titles(url)
-    summary = get_summary(titles)
-    print('\n' + summary)
+    try:
+        url = input('URL: ')
+        html_doc = download_page(url)
+        titles = get_titles(html_doc)
+        summary = get_summary(titles)
+        print('\n' + summary)
+    except Exception as e:
+        print(str(e))
 
 
 if __name__ == "__main__":
