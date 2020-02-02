@@ -2,6 +2,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
+from requests.exceptions import ConnectionError
 
 """
 A script to generate summary for blogspot articles.
@@ -16,13 +17,28 @@ def get_titles(url):
     html_doc = download_page(url)
     soup = BeautifulSoup(html_doc, 'html.parser')
     content_page = soup.find('div', {'class': 'post-body'})
+
+    if content_page is None:
+        raise ValueError(f'"{url}" isn\'t a valid blogspot page format!')
+
     titles = content_page.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
 
     return titles
 
 
 def download_page(url):
-    request = requests.get(url)
+    url_pattern = r"\b((http|https):\/\/?)[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|\/?))"
+
+    if not re.match(url_pattern, url):
+        print(f'Invalid URL format for "{url}"')
+        exit(1)
+
+    try:
+        request = requests.get(url)
+    except ConnectionError:
+        print(f'Unavailable "{url}"')
+        exit(1)
+
     html_doc = request.text
     request.close()
 
@@ -69,8 +85,12 @@ def get_summary(titles):
     return pretty_summary
 
 
-if __name__ == "__main__":
+def main():
     url = input('URL: ')
     titles = get_titles(url)
     summary = get_summary(titles)
     print('\n' + summary)
+
+
+if __name__ == "__main__":
+    main()
