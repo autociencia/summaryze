@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import unittest
 import summaryze
+from requests.exceptions import ConnectionError
 
 """
 A script to test generated summary for blogspot articles.
@@ -20,11 +21,8 @@ class TestURLRequest(unittest.TestCase):
 
     def test_connection_error(self):
         url = 'http://www.w3.org'
-        with self.assertRaises(SystemExit) as context:
+        with self.assertRaises(ConnectionError):
             summaryze.download_page(url)
-
-        exit_code = context.exception.code
-        self.assertEqual(exit_code, 1)
 
     def test_invalid_url(self):
         urls = [
@@ -38,17 +36,14 @@ class TestURLRequest(unittest.TestCase):
             'ftp://url.invalid.com']
 
         for url in urls:
-            with self.assertRaises(SystemExit) as context:
+            with self.assertRaises(ConnectionError):
                 summaryze.download_page(url)
-
-            exit_code = context.exception.code
-            self.assertEqual(exit_code, 1)
 
     def test_valid_url(self):
         urls = [
             'https://autociencia.blogspot.com/',
             'https://autociencia.blogspot.com/2016/07/teoria-dos-conjuntos-introducao.html',
-            'https://www.google.com/'
+            'http://www.google.com/'
         ]
 
         for url in urls:

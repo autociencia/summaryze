@@ -30,14 +30,12 @@ def download_page(url):
     url_pattern = r"\b((http|https):\/\/?)[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|\/?))"
 
     if not re.match(url_pattern, url):
-        print(f'Invalid URL format for "{url}"')
-        exit(1)
+        raise ConnectionError(f'Invalid URL format for "{url}')
 
     try:
         request = requests.get(url)
-    except ConnectionError:
-        print(f'Unavailable "{url}"')
-        exit(1)
+    except Exception:
+        raise ConnectionError(f'Unavailable "{url}"')
 
     html_doc = request.text
     request.close()
