@@ -58,6 +58,11 @@ def download_page(url):
 
 
 def index_summary(titles):
+    """
+    Index all titles in a summary.
+    :param titles: to create a summary
+    :return: a summary with index
+    """
     index = 0
     previous_title_level = int(titles[0].name[1])
     inner_list = ''
@@ -91,6 +96,11 @@ def index_summary(titles):
 
 
 def get_summary(titles):
+    """
+    Create an indexed summary.
+    :param titles: to create a summary
+    :return: a pretty indexed summary in HTML format
+    """
     summary = f'<div class="summary-post">{index_summary(titles)[0]}</div>'
     pretty_summary = BeautifulSoup(summary, 'lxml').body.next.prettify()
 
@@ -103,7 +113,7 @@ def main():
         html_doc = download_page(url)
         titles = get_titles(html_doc)
         summary = get_summary(titles)
-        print('\n' + summary)
+        print(summary)
     except Exception as e:
         print(str(e))
 
