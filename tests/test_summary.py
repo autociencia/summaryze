@@ -55,6 +55,11 @@ class TestSummary(unittest.TestCase):
             summaryze.get_titles(test_page)
 
     def test_summary_index_with_titles_in_the_same_level(self):
+        """
+        Tests creation of a summary with same title level.
+        Expected: a summary (string) with one list of <li>.
+        """
+
         test_page = """
         <!DOCTYPE html>
         <html>
@@ -87,6 +92,11 @@ class TestSummary(unittest.TestCase):
         self.assertEqual(summary, expected_summary)
 
     def test_summary_index_with_titles_in_asc_level(self):
+        """
+        Tests creation of a summary with title levels in ascending form.
+        Expected: a summary (string) with linked lists of <li> for each title.
+        """
+
         test_page = """
         <!DOCTYPE html>
         <html>
@@ -131,6 +141,11 @@ class TestSummary(unittest.TestCase):
         self.assertEqual(summary, expected_summary)
 
     def test_summary_index_with_titles_asc_and_desc_level(self):
+        """
+        Tests creation of a summary with title levels increasing and decreasing.
+        Expected: a summary (string) with titles and its subtitles in as a list <li>.
+        """
+
         test_page = """
         <!DOCTYPE html>
         <html>
@@ -166,6 +181,12 @@ class TestSummary(unittest.TestCase):
         self.assertEqual(summary, expected_summary)
 
     def test_summary_index_with_titles_desc_level(self):
+        """
+        Tests creation of a summary with title levels decreasing.
+        Expected: a summary (string) with titles and its subtitles
+        without highlest titles in the end.
+        """
+
         test_page = """
         <!DOCTYPE html>
         <html>
