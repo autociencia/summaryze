@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import re
 import requests
+import sys
 from bs4 import BeautifulSoup
 from requests.exceptions import ConnectionError
 
@@ -109,14 +110,18 @@ def get_summary(titles):
     return pretty_summary
 
 
-def main():
+def main(args):
     """
     Main function that tries download a page,
     extract its titles and to create a summary.
     """
 
     try:
-        url = input('URL: ')
+        if len(args) == 1:
+            url = input('URL: ')
+        else:
+            url = args[1]
+
         html_doc = download_page(url)
         titles = get_titles(html_doc)
         summary = get_summary(titles)
@@ -126,4 +131,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv)
