@@ -130,3 +130,6 @@ dmypy.json
 
 # Tmp files
 *.*~
+
+# SASS Cache
+.sass-cache/

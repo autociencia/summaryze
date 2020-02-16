@@ -1,0 +1,33 @@
+/**
+* This style is used for export colors to background, color and others elements
+*/
+.auto-blue {
+  background-color: #2c3e50 !important; }
+
+.auto-gray {
+  background-color: #e6e6e6 !important; }
+
+.color-auto-gray-water {
+  color: #8f8f8f !important; }
+
+/**
+* This style is used for stylize URL Search Box and URL components
+*/
+#url-control {
+  width: 100% !important; }
+
+#url-container {
+  justify-content: center !important; }
+
+.auto-btn-hover {
+  transition-duration: 0.3s; }
+
+.auto-btn-hover:hover {
+  background-color: #27ae60 !important;
+  color: #ffffff !important;
+  transition-duration: 0.3s; }
+
+.auto-btn-border {
+  border-color: #b5b5b5; }
+
+/*# sourceMappingURL=style.css.map */
