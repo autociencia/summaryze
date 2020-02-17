@@ -133,3 +133,13 @@ dmypy.json
 
 # SASS Cache
 .sass-cache/
+
+# Node modules
+node_modules
+
+# VSCode
+.vscode/
+
+# TypeScript
+package-lock.json
+.tscache/

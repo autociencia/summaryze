@@ -1,0 +1,34 @@
+{
+  "name": "summaryze",
+  "version": "1.0.0",
+  "description": "Summary generator for blogspot articles",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/autociencia/summaryze.git"
+  },
+  "keywords": [
+    "summary",
+    "blogspot",
+    "blogger",
+    "typescript"
+  ],
+  "author": "Autociencia",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/autociencia/summaryze/issues"
+  },
+  "homepage": "https://github.com/autociencia/summaryze#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.3.32",
+    "grunt": "^1.0.4",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "grunt-ts": "^6.0.0-beta.22",
+    "systemjs": "^6.2.3",
+    "typescript": "^3.7.5"
+  }
+}

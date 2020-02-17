@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA;;EAEE;AAEF,UAAW;EACT,gBAAgB,EAAE,kBAAqB;;AAGzC,UAAW;EACT,gBAAgB,EAAE,kBAAqB;;AAGzC,sBAAuB;EACrB,KAAK,EAAE,kBAA2B;;ACbpC;;EAEE;AAEF,YAAa;EACT,KAAK,EAAE,eAAe;;AAG1B,cAAe;EACd,eAAe,EAAE,iBAAiB;;ACTnC,eAAgB;EACd,mBAAmB,EAAE,IAAI;;AAG3B,qBAAsB;EACpB,gBAAgB,EAAE,kBAAsB;EACxC,KAAK,EAAE,kBAAkB;EACzB,mBAAmB,EAAE,IAAI;;AAE3B,gBAAiB;EACf,YAAY,EAAE,OAAO",
-"sources": ["../scss/page/_colors.scss","../scss/page/_url.scss","../scss/page/_buttons.scss"],
-"names": [],
-"file": "style.css"
-}

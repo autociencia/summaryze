@@ -1,0 +1,28 @@
+.auto-btn-hover {
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: $auto-green !important;
+    color: #ffffff !important;
+  }
+}
+
+.auto-btn-border {
+  border-color: #b5b5b5;
+}
+
+.auto-tab a {
+	border-bottom-color: transparent !important;
+	border-width: 3px;
+  transition-duration: .3s;
+
+  &:hover {
+  	border-bottom-color: #2c3e50 !important;
+    color: #27ae60 !important;
+  	border-width: 3px;
+  }
+}
+
+.auto-tab a .icon:last-child {
+  margin-left: 0 !important;
+}
