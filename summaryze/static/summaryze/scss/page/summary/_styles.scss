@@ -1,0 +1,22 @@
+.style-list-item {
+    display: block;
+    padding: 5px;
+    line-height: 2.5em;
+    transition-duration: 0.2s;
+    border-bottom: 1px solid #eaeaea;
+    border-radius: 3px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $auto-green;
+        color: #fff;
+    }
+
+    &:active, %style-list-item-active {
+        background-color: $auto-blue;
+    }
+}
+
+.style-list-item-active {
+    @extend %style-list-item-active;
+}

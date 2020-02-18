@@ -62,16 +62,16 @@
 
                       <div class="tabs auto-tab">
                         <ul>
-                          <li><a><span class="icon"><i class="fa fa-list"></i></span>Summary</a></li>
-                          <li><a><span class="icon"><i class="fab fa-html5"></i></span>HTML</a></li>
-                          <li><a><span class="icon"><i class="fab fa-css3"></i></span>CSS</a></li>
+                          <li><a id="summary-btn"><span class="icon"><i class="fa fa-list"></i></span>Summary</a></li>
+                          <li><a id="html-btn"><span class="icon"><i class="fab fa-html5"></i></span>HTML</a></li>
+                          <li><a id="css-btn"><span class="icon"><i class="fab fa-css3"></i></span>CSS</a></li>
                         </ul>
                       </div>
 
                     </div>
                   </header>
                   <div class="card-content">
-                    <div class="content">
+                    <div id="summary-content" class="content">
                       Generated code
                     </div>
                   </div>
@@ -87,8 +87,8 @@
                     </p>
                   </header>
                   <div class="card-content">
-                    <div class="content">
-                      lista de estilos
+                    <div id="style-list" class="content">
+
                     </div>
                   </div>
                 </div>
@@ -100,11 +100,11 @@
       </section>
       <script>
         SystemJS.config({
-            baseURL: "{{ url_for('static', filename='summaryze/js/app.min.js') }}"
+            baseURL: "{{ url_for('static', filename='summaryze/js/app.js') }}"
         });
         var app = SystemJS.import('');
         app.then(function (script) {
-            SystemJS.import('ts/app').then(function (module) {
+            SystemJS.import('summaryze/static/summaryze/ts/app').then(function (module) {
                 var app = new module.App();
                 app.start();
             });

@@ -97,7 +97,7 @@ def index_summary(titles):
     return [outer_list, index]
 
 
-def get_summary(titles):
+def create_summary(titles):
     """
     Create an indexed summary.
     :param titles: to create a summary
@@ -110,10 +110,24 @@ def get_summary(titles):
     return pretty_summary
 
 
-def main(args):
+def get_summary(url):
     """
     Main function that tries download a page,
     extract its titles and to create a summary.
+    :param url: to generate a summary
+    :return: a pretty indexed summary in HTML format
+    """
+
+    html_doc = download_page(url)
+    titles = get_titles(html_doc)
+    summary = create_summary(titles)
+
+    return summary
+
+def main(args):
+    """
+    Command-line interface from this app.
+    :param args: a list of args from sys, where only second arg is used
     """
 
     try:
@@ -122,9 +136,7 @@ def main(args):
         else:
             url = args[1]
 
-        html_doc = download_page(url)
-        titles = get_titles(html_doc)
-        summary = get_summary(titles)
+        summary = get_summary(url)
         print(summary)
     except Exception as e:
         print(str(e))

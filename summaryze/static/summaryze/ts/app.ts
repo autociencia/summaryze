@@ -1,34 +1,61 @@
-import { HttpClient } from "./http.client/index";
+import { SearchBtn } from './events/index';
+import { SummaryCache } from './cache/index';
+import { HtmlBtn } from './events/HtmlBtn';
+import { StyleListController } from './controllers/StyleListController';
 
 export class App {
 
     start(): void {
-        this.addBtnSearchEvent();
+        this.loadCache();
+        this.loadStyleList();
+        this.addSearchBtnEvent();
+        this.addSummaryBtnEvent();
+        this.addHtmlBtnEvent();
     }
 
-    private addBtnSearchEvent(): void {
+    private addSearchBtnEvent(): void {
         let btn = document.querySelector('#url-search') as HTMLElement;
 
-        if (btn === undefined || btn === null) {
+        if (btn === undefined) {
             throw "URL Search Button not found";
         }
+
+        const btnEvent: SearchBtn = new SearchBtn();
         
-        btn.addEventListener('click', () => {
-            let url_input = document.querySelector('#url-input') as HTMLInputElement;
+        btn.addEventListener('click', btnEvent.searchAndShowSummary);
+    }
 
-            if (url_input == undefined || url_input == null) {
-                throw "URL Search Box not found";
-            }
+    private addSummaryBtnEvent(): void {
+        let btn = document.querySelector('#summary-btn') as HTMLElement;
 
-            let url: string = url_input.value.trim();
+        if (btn === undefined) {
+            throw "Summary Button not found";
+        }
 
-            if (url === "") {
-                return;
-            }
+        const summaryCache: SummaryCache = new SummaryCache();
+        
+        btn.addEventListener('click', summaryCache.loadCache);
+    }
 
-            let httpClient: HttpClient = new HttpClient();
-            let content: string = httpClient.fetchPage(url);
-            console.log(content);
-        });
+    private addHtmlBtnEvent(): void {
+        let btn = document.querySelector('#html-btn') as HTMLElement;
+
+        if (btn === undefined) {
+            throw "HTML Button not found";
+        }
+
+        const btnEvent: HtmlBtn = new HtmlBtn();
+        
+        btn.addEventListener('click', btnEvent.showHTML);
+    }
+
+    loadCache(): void {
+        const summaryCache: SummaryCache = new SummaryCache();
+        summaryCache.loadCache();
+    }
+
+    loadStyleList(): void {
+        const controller: StyleListController = new StyleListController();
+        controller.updateStyleList();
     }
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import unittest
-from src import summaryze
+from api import summaryze
 from requests.exceptions import ConnectionError
 
 """

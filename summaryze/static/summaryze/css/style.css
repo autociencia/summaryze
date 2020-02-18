@@ -40,4 +40,18 @@
 .auto-tab a .icon:last-child {
   margin-left: 0 !important; }
 
+.style-list-item {
+  display: block;
+  padding: 5px;
+  line-height: 2.5em;
+  transition-duration: 0.2s;
+  border-bottom: 1px solid #eaeaea;
+  border-radius: 3px; }
+  .style-list-item:hover {
+    cursor: pointer;
+    background-color: #27ae60;
+    color: #fff; }
+  .style-list-item:active, .style-list-item .style-list-item-active {
+    background-color: #2c3e50; }
+
 /*# sourceMappingURL=style.css.map */

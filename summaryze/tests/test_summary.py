@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import unittest
-from src import summaryze
+from api import summaryze
 from bs4 import BeautifulSoup
 
 """
@@ -75,7 +75,7 @@ class TestSummary(unittest.TestCase):
         </html>"""
 
         titles = summaryze.get_titles(test_page)
-        summary = summaryze.get_summary(titles)
+        summary = summaryze.create_summary(titles)
 
         str_expected = """
         <div class="summary-post">
@@ -112,7 +112,7 @@ class TestSummary(unittest.TestCase):
         </html>"""
 
         titles = summaryze.get_titles(test_page)
-        summary = summaryze.get_summary(titles)
+        summary = summaryze.create_summary(titles)
 
         str_expected = """
         <div class="summary-post">
@@ -161,7 +161,7 @@ class TestSummary(unittest.TestCase):
         </html>"""
 
         titles = summaryze.get_titles(test_page)
-        summary = summaryze.get_summary(titles)
+        summary = summaryze.create_summary(titles)
 
         str_expected = """
         <div class="summary-post">
@@ -200,7 +200,7 @@ class TestSummary(unittest.TestCase):
         </html>"""
 
         titles = summaryze.get_titles(test_page)
-        summary = summaryze.get_summary(titles)
+        summary = summaryze.create_summary(titles)
 
         str_expected = """
         <div class="summary-post">
