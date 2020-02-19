@@ -1,4 +1,4 @@
-import { Summary } from '../models/index';
+import { Summary, Style } from '../models/index';
 
 /**
  * This class is responsible to present the summary
@@ -36,6 +36,13 @@ export class SummaryView {
         `;
     }
 
+    private templateCSS(style: Style): string {
+        let strStyle = style.content.replace(/^\s+/gm, '');
+        return `
+            <pre><code>${strStyle}</code></pre>
+        `;
+    }
+
     updateSummary(summary: Summary): void {
         let template = this.templateSummary(summary);
         this._element.html(template);
@@ -43,6 +50,11 @@ export class SummaryView {
 
     updateHTML(summary: Summary): void {
         let template = this.templateHTML(summary);
+        this._element.html(template);
+    }
+
+    updateCSS(style: Style): void {
+        let template = this.templateCSS(style);
         this._element.html(template);
     }
 }

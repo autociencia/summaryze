@@ -44,4 +44,5 @@ function fetchEvent(content: string): void {
 
     controller.updateSummary(summary);
     sessionStorage.setItem('summary_html', summary.content.innerHTML);
+    sessionStorage.setItem('summary_css', 'default');
 }

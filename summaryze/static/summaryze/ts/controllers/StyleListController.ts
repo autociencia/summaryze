@@ -7,6 +7,6 @@ export class StyleListController {
         const styleList = new StyleList();
         const view = new StyleListView();
 
-        view.update(styleList.get());
+        view.update(styleList.getAll());
     }
 }

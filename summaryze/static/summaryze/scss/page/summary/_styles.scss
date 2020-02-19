@@ -12,11 +12,12 @@
         color: #fff;
     }
 
-    &:active, %style-list-item-active {
+    &:active {
         background-color: $auto-blue;
     }
 }
 
 .style-list-item-active {
-    @extend %style-list-item-active;
+    color: #fff;
+    background-color: $auto-blue;
 }

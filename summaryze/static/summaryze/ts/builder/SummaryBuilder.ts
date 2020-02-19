@@ -1,4 +1,5 @@
 import { Summary } from '../models/index';
+import { StyleList } from '../data/index';
 
 export class SummaryBuilder {
 
@@ -15,8 +16,8 @@ export class SummaryBuilder {
         return this;
     }
 
-    style(style: string): SummaryBuilder {
-        //TODO
+    style(styleId: string): SummaryBuilder {
+        this._summary.style = new StyleList().get(styleId);
 
         return this;
     }

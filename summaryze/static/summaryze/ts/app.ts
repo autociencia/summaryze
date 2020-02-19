@@ -1,16 +1,18 @@
-import { SearchBtn } from './events/index';
-import { SummaryCache } from './cache/index';
-import { HtmlBtn } from './events/HtmlBtn';
+import { SearchBtn, HtmlBtn, CssBtn } from './events/index';
+import { SummaryCache, ChangeStyleBtnCache } from './cache/index';
 import { StyleListController } from './controllers/StyleListController';
+import { ChangeStyleBtn } from './events/ChangeStyleBtn';
 
 export class App {
 
     start(): void {
-        this.loadCache();
         this.loadStyleList();
+        this.loadCache();
+        this.addChangeStyleBtnEvent();
         this.addSearchBtnEvent();
         this.addSummaryBtnEvent();
         this.addHtmlBtnEvent();
+        this.addCssBtnEvent();
     }
 
     private addSearchBtnEvent(): void {
@@ -49,13 +51,38 @@ export class App {
         btn.addEventListener('click', btnEvent.showHTML);
     }
 
-    loadCache(): void {
-        const summaryCache: SummaryCache = new SummaryCache();
-        summaryCache.loadCache();
+    private addCssBtnEvent(): void {
+        let btn = document.querySelector('#css-btn') as HTMLElement;
+
+        if (btn === undefined) {
+            throw "CSS Button not found";
+        }
+
+        const btnEvent: CssBtn = new CssBtn();
+        
+        btn.addEventListener('click', btnEvent.showCSS);
     }
 
-    loadStyleList(): void {
+    private addChangeStyleBtnEvent(): void {
+        let btns = document.querySelectorAll('.style-list-item');
+
+        btns.forEach((btn) => {
+            const event = new ChangeStyleBtn();
+            btn.addEventListener('click', event.changeStyle);
+        });
+    }
+
+    private loadCache(): void {
+        const summaryCache: SummaryCache = new SummaryCache();
+        const changeStyleBtnCache: ChangeStyleBtnCache = new ChangeStyleBtnCache();
+        
+        summaryCache.loadCache();
+        changeStyleBtnCache.loadCache();
+    }
+
+    private loadStyleList(): void {
         const controller: StyleListController = new StyleListController();
         controller.updateStyleList();
     }
+    
 }

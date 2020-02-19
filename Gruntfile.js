@@ -2,8 +2,8 @@ module.exports = function(grunt) {
     grunt.initConfig({
         ts: {
             default : {
-                src: ['**/*.ts', '!node_modules/**'],
-                dest: 'js/app.js',
+                src: ['./summaryze/static/summaryze/**/*.ts', '!node_modules/**'],
+                dest: './summaryze/static/summaryze/js/app.js',
                 options: {
                     target: 'es6',
                     rootDir: "./",
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
               files: {
-                'js/app.min.js': ['js/app.js']
+                './summaryze/static/summaryze/js/app.min.js': ['./summaryze/static/summaryze/js/app.js']
               }
             }
           }

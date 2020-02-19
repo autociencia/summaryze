@@ -1,4 +1,4 @@
-import { Summary } from "../models/index";
+import { Summary, Style } from "../models/index";
 import { SummaryView } from "../views/index";
 
 /**
@@ -15,5 +15,10 @@ export class SummaryController {
     updateHTML(summary: Summary): void {
         const view = new SummaryView();
         view.updateHTML(summary);
+    }
+
+    updateCSS(style: Style): void {
+        const view = new SummaryView();
+        view.updateCSS(style);
     }
 }
