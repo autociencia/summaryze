@@ -21,6 +21,9 @@ export class StyleList {
                     &nbsp;&nbsp;&nbsp;&nbsp;margin-bottom: 20px;
                     &nbsp;&nbsp;&nbsp;&nbsp;border-bottom-left-radius: 5px;
                 }
+                .summary-post a {
+                    &nbsp;&nbsp;&nbsp;&nbsp;text-decoration: none;
+                }
                 .summary-post a:link, .summary-post a:visited {
                     &nbsp;&nbsp;&nbsp;&nbsp;color: #1d8549 !important;
                 }
@@ -31,7 +34,7 @@ export class StyleList {
                     &nbsp;&nbsp;&nbsp;&nbsp;counter-reset: item;
                     &nbsp;&nbsp;&nbsp;&nbsp;margin-top: 0;
                     &nbsp;&nbsp;&nbsp;&nbsp;margin-left: 10px;
-                    &nbsp;&nbsp;&nbsp;&nbsp;padding-left: 10px;
+                    &nbsp;&nbsp;&nbsp;&nbsp;padding-left: 0;
                 }
                 .summary-post b {
                     &nbsp;&nbsp;&nbsp;&nbsp;padding-left: 20px;

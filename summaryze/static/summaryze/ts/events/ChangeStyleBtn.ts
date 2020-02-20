@@ -4,8 +4,7 @@ import { SummaryController } from '../controllers/index';
 
 export class ChangeStyleBtn {
     changeStyle(event: Event): void {
-        const btn: HTMLElement = <HTMLElement>event.target;
-        const styleId = btn.id;
+        const styleId: string = (<HTMLElement>event.target).id;
         const summary_text = sessionStorage.getItem('summary_html') as string;
 
         if (summary_text == null || summary_text == undefined) {
@@ -23,8 +22,12 @@ export class ChangeStyleBtn {
         if (summary.style === undefined)
             return;
         
-        sessionStorage.setItem('summary_css', summary.style.id);
+        ChangeStyleBtn.changeStyleById(styleId);
+    }
 
+
+    static changeStyleById(styleId: string): void {
+        const btn = document.querySelector(`#${styleId}`) as HTMLElement;
         const btns = document.querySelectorAll('.style-list-item');
         btns.forEach((btn) => {
             if (btn.classList.contains('style-list-item-active')) {
@@ -32,6 +35,7 @@ export class ChangeStyleBtn {
             }
         })
         btn.classList.add('style-list-item-active');
-        
+
+        sessionStorage.setItem('summary_css', styleId);
     }
 }

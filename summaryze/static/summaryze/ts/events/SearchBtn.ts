@@ -2,6 +2,7 @@ import { HttpClient } from '../http/index';
 import { SummaryController } from '../controllers/index';
 import { SummaryBuilder } from '../builder/SummaryBuilder';
 import { Summary } from '../models/index';
+import { ChangeStyleBtn } from './index';
 
 /**
  * All performed actions on button Search is structured here.
@@ -39,10 +40,20 @@ export class SearchBtn {
 }
 
 function fetchEvent(content: string): void {
-    const summary: Summary = new SummaryBuilder().content(content).build();
-    const controller = new SummaryController();
+    let cachedStyle = sessionStorage.getItem('summary_css') as string;
+    if (cachedStyle === undefined || cachedStyle === '') {
+        cachedStyle = 'default'
+    }
 
+    const summary: Summary = new SummaryBuilder()
+        .content(content)
+        .style(cachedStyle)
+        .build();
+
+    const controller = new SummaryController();
     controller.updateSummary(summary);
     sessionStorage.setItem('summary_html', summary.content.innerHTML);
-    sessionStorage.setItem('summary_css', 'default');
+    sessionStorage.setItem('summary_css', cachedStyle);
+
+    ChangeStyleBtn.changeStyleById(cachedStyle)
 }
