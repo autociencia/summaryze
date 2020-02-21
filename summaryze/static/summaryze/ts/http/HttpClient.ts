@@ -1,8 +1,9 @@
 /**
- * HtppClient make GET requests o obtain data only. 
+ * HtppClient, that only makes GET requests to obtain data. 
  */
 
 export class HttpClient {
+
     fetchPage(url: string, callback: Function): void {
         $.ajax({
             type: 'GET',

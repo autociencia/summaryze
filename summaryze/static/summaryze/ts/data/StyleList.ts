@@ -1,4 +1,5 @@
-import { Style } from "../models/index";
+import { Style } from '../models/index';
+import { ObjectUtils } from '../utils/index';
 
 export class StyleList {
     getAll(): Style[] {
@@ -53,6 +54,12 @@ export class StyleList {
     }
 
     get(styleId: string): Style {
-        return this.getAll().filter((s) => s.id === styleId)[0];
+        const style = this.getAll().find((s) => s.id === styleId) as Style;
+        
+        if (ObjectUtils.nonExists(style)) {
+            throw `"${styleId}" not found`;
+        }
+
+        return style;
     }
 }

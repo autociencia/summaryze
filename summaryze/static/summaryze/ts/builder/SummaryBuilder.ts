@@ -1,6 +1,10 @@
 import { Summary } from '../models/index';
 import { StyleList } from '../data/index';
 
+/**
+ * SummaryBuilder makes easy to build a summary model.
+ */
+
 export class SummaryBuilder {
 
     private _summary: Summary;

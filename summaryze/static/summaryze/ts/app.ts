@@ -1,7 +1,7 @@
-import { SearchBtn, HtmlBtn, CssBtn } from './events/index';
-import { SummaryCache, ChangeStyleBtnCache } from './cache/index';
+import { SearchBtn, HtmlBtn, CssBtn, StyleListBtns } from './events/index';
+import { SummaryCache, StyleListBtnsCache } from './cache/index';
 import { StyleListController } from './controllers/StyleListController';
-import { ChangeStyleBtn } from './events/ChangeStyleBtn';
+import { ObjectUtils } from './utils/index';
 
 export class App {
 
@@ -18,7 +18,7 @@ export class App {
     private addSearchBtnEvent(): void {
         let btn = document.querySelector('#url-search') as HTMLElement;
 
-        if (btn === undefined) {
+        if (ObjectUtils.nonExists(btn)) {
             throw "URL Search Button not found";
         }
 
@@ -30,7 +30,7 @@ export class App {
     private addSummaryBtnEvent(): void {
         let btn = document.querySelector('#summary-btn') as HTMLElement;
 
-        if (btn === undefined) {
+        if (ObjectUtils.nonExists(btn)) {
             throw "Summary Button not found";
         }
 
@@ -42,7 +42,7 @@ export class App {
     private addHtmlBtnEvent(): void {
         let btn = document.querySelector('#html-btn') as HTMLElement;
 
-        if (btn === undefined) {
+        if (ObjectUtils.nonExists(btn)) {
             throw "HTML Button not found";
         }
 
@@ -54,7 +54,7 @@ export class App {
     private addCssBtnEvent(): void {
         let btn = document.querySelector('#css-btn') as HTMLElement;
 
-        if (btn === undefined) {
+        if (ObjectUtils.nonExists(btn)) {
             throw "CSS Button not found";
         }
 
@@ -67,14 +67,14 @@ export class App {
         let btns = document.querySelectorAll('.style-list-item');
 
         btns.forEach((btn) => {
-            const event = new ChangeStyleBtn();
-            btn.addEventListener('click', event.changeStyle);
+            const event = new StyleListBtns();
+            btn.addEventListener('click', event.applyStyle);
         });
     }
 
     private loadCache(): void {
         const summaryCache: SummaryCache = new SummaryCache();
-        const changeStyleBtnCache: ChangeStyleBtnCache = new ChangeStyleBtnCache();
+        const changeStyleBtnCache: StyleListBtnsCache = new StyleListBtnsCache();
         
         summaryCache.loadCache();
         changeStyleBtnCache.loadCache();

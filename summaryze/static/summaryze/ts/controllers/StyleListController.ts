@@ -1,6 +1,10 @@
 import { StyleList } from '../data/index';
 import { StyleListView } from '../views/index';
 
+/**
+ * StyleListController binds all summary styles on its view.
+ */
+
 export class StyleListController {
     
     updateStyleList(): void {
