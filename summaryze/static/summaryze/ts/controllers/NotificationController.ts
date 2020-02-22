@@ -6,6 +6,10 @@ import { NotificationView } from '../views/index'
 
 export class NotificationController {
     
+    /**
+     * Updates notification's view with a error message.
+     * @param error message to be append to view
+     */
     updateError(error: string): void {
         const view = new NotificationView();
         view.updateError(error);

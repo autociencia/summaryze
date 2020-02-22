@@ -1,7 +1,16 @@
 import { Style } from '../models/index';
 import { ObjectUtils } from '../utils/index';
 
+/**
+ * All styles is stored here.
+ */
+
 export class StyleList {
+
+    /**
+     * Gets all styles.
+     * @returns a list of styles
+     */
     getAll(): Style[] {
         return [
             {
@@ -53,6 +62,12 @@ export class StyleList {
         ];
     }
 
+
+    /**
+     * Gets a style by id.
+     * @param styleId style id
+     * @returns a style
+     */
     get(styleId: string): Style {
         const style = this.getAll().find((s) => s.id === styleId) as Style;
         

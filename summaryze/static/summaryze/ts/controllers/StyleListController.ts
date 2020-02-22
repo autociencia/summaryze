@@ -7,6 +7,9 @@ import { StyleListView } from '../views/index';
 
 export class StyleListController {
     
+    /**
+     * Updates style menu with a list of styles.
+     */
     updateStyleList(): void {
         const styleList = new StyleList();
         const view = new StyleListView();

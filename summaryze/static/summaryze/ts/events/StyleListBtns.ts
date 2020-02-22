@@ -9,6 +9,10 @@ import { ObjectUtils } from '../utils/index';
 
 export class StyleListBtns {
 
+    /**
+     * Changes the style of a summary when the button is pressed.
+     * @param event that contains the button/style id
+     */
     applyStyle(event: Event): void {
         const newStyleId: string = (<HTMLElement>event.target).id;
         const summary_text = sessionStorage.getItem('summary_html') as string;
@@ -29,6 +33,10 @@ export class StyleListBtns {
     }
 
 
+    /**
+     * Hightlights a selected style by id
+     * @param styleId of style
+     */
     static updateBtn(styleId: string): void {
         const btn = document.querySelector(`#${styleId}`) as HTMLElement;
         const btns = document.querySelectorAll('.style-list-item');

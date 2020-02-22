@@ -1,4 +1,4 @@
-import { SummaryBuilder } from '../builder/SummaryBuilder';
+import { SummaryBuilder } from '../builder/index';
 import { Summary } from '../models/index';
 import { SummaryController } from '../controllers/index';
 import { ObjectUtils } from '../utils/index';
@@ -9,6 +9,9 @@ import { ObjectUtils } from '../utils/index';
 
 export class SummaryCache {
 
+    /**
+     * Loads the summary and style before refresh on style list.
+     */
     loadCache(): void {
         const content = sessionStorage.getItem('summary_html') as string;
         const styleId = sessionStorage.getItem('summary_css') as string;

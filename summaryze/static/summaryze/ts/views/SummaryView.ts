@@ -13,11 +13,21 @@ export class SummaryView {
         this._element = $('#summary-content');
     }
 
+
+    /**
+     * Shows a formated summary on page.
+     * @param summary to be displayed
+     */
     updateSummary(summary: Summary): void {
         const template = this.templateSummary(summary);
         this._element.html(template);
     }
 
+
+    /**
+     * Shows an HTML summary on page.
+     * @param summary to be used
+     */
     updateHTML(summary: Summary): void {
         const template = this.templateHTML(summary);
         this._element.html(template);
@@ -26,6 +36,11 @@ export class SummaryView {
         Prism.highlightElement(code);
     }
 
+
+    /**
+     * Shows summary style on page.
+     * @param style to be used
+     */
     updateCSS(style: Style): void {
         const template = this.templateCSS(style);
         this._element.html(template);
@@ -34,6 +49,11 @@ export class SummaryView {
         Prism.highlightElement(code);
     }
 
+
+    /**
+     * Template of summary.
+     * @param summary to be used
+     */
     private templateSummary(summary: Summary): string {
         let strStyle: string = '';
 
@@ -47,6 +67,11 @@ export class SummaryView {
         `;
     }
 
+
+    /**
+     * Template of HTML summary.
+     * @param summary to be used
+     */
     private templateHTML(summary: Summary): string {
         let strSummary = summary.content.innerHTML
             .replace(/&/g, "&amp;")
@@ -58,6 +83,11 @@ export class SummaryView {
         `;
     }
 
+
+    /**
+     * Template of summary style.
+     * @param style to be used
+     */
     private templateCSS(style: Style): string {
         let strStyle = style.content.replace(/^\s+/gm, '');
         return `

@@ -1,6 +1,3 @@
-import { NotificationEvent } from '../events/index';
-import { NotificationController } from '../controllers/index'
-
 /**
  * HtppClient, that only makes GET requests to obtain data. 
  */

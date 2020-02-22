@@ -1,11 +1,14 @@
 import { ObjectUtils } from '../utils/index';
 
 /**
- * Loads the previous selected summary style from sessionStorage and append to style menu.
+ * Loads the selected summary style before refresh from sessionStorage and append to style menu.
  */
 
 export class StyleListBtnsCache {
 
+    /**
+     * Loads the selected style before refresh on style list.   
+     */
     loadCache(): void {
         const styleId = sessionStorage.getItem('summary_css') as string;
 

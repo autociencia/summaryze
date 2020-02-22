@@ -9,6 +9,9 @@ import { ObjectUtils } from '../utils/index';
 
 export class CssBtn {
 
+    /**
+     * This event is responsable to show Summary's CSS code.
+     */
     showCSS(): void {
         const styleId = sessionStorage.getItem('summary_css') as string;
 
