@@ -24,10 +24,12 @@
   "homepage": "https://github.com/autociencia/summaryze#readme",
   "devDependencies": {
     "@types/jquery": "^3.3.32",
+    "@types/prismjs": "^1.16.0",
     "grunt": "^1.0.4",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-uglify-es": "^3.3.0",
     "grunt-ts": "^6.0.0-beta.22",
+    "prismjs": "^1.19.0",
     "systemjs": "^6.2.3",
     "typescript": "^3.7.5"
   }

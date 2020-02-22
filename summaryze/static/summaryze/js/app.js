@@ -69,28 +69,36 @@ System.register("summaryze/static/summaryze/ts/models/index", [], function (expo
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/views/SummaryView", [], function (exports_6, context_6) {
+System.register("summaryze/static/summaryze/ts/views/SummaryView", ["prismjs"], function (exports_6, context_6) {
     "use strict";
-    var SummaryView;
+    var prismjs_1, SummaryView;
     var __moduleName = context_6 && context_6.id;
     return {
-        setters: [],
+        setters: [
+            function (prismjs_1_1) {
+                prismjs_1 = prismjs_1_1;
+            }
+        ],
         execute: function () {
             SummaryView = class SummaryView {
                 constructor() {
                     this._element = $('#summary-content');
                 }
                 updateSummary(summary) {
-                    let template = this.templateSummary(summary);
+                    const template = this.templateSummary(summary);
                     this._element.html(template);
                 }
                 updateHTML(summary) {
-                    let template = this.templateHTML(summary);
+                    const template = this.templateHTML(summary);
                     this._element.html(template);
+                    const code = document.querySelector('.language-markup');
+                    prismjs_1.default.highlightElement(code);
                 }
                 updateCSS(style) {
-                    let template = this.templateCSS(style);
+                    const template = this.templateCSS(style);
                     this._element.html(template);
+                    const code = document.querySelector('.language-css');
+                    prismjs_1.default.highlightElement(code);
                 }
                 templateSummary(summary) {
                     let strStyle = '';
@@ -108,13 +116,13 @@ System.register("summaryze/static/summaryze/ts/views/SummaryView", [], function 
                         .replace(/</g, "&lt;")
                         .replace(/>/g, "&gt;");
                     return `
-            <pre><code>${strSummary}</code></pre>
+            <pre><code class="language-markup">${strSummary}</code></pre>
         `;
                 }
                 templateCSS(style) {
                     let strStyle = style.content.replace(/^\s+/gm, '');
                     return `
-            <pre><code>${strStyle}</code></pre>
+            <pre><code class="language-css">${strStyle}</code></pre>
         `;
                 }
             };

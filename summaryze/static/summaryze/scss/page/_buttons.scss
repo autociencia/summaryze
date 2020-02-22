@@ -12,17 +12,27 @@
 }
 
 .auto-tab a {
-	border-bottom-color: transparent !important;
-	border-width: 3px;
-  transition-duration: .3s;
+  padding: 0 10px 5px 10px;
+  color: #4a4a4a;
+	border-bottom-color: transparent;
+  transition-duration: .2s;
+  transition-timing-function: ease;
 
   &:hover {
-  	border-bottom-color: #2c3e50 !important;
     color: #27ae60 !important;
-  	border-width: 3px;
   }
 }
 
+.auto-tab-container {
+  padding-bottom: 5px;
+}
+
+.auto-tab .icon {
+  display: inherit !important;
+}
+.auto-tab .icon::after {
+  content: "  ";
+}
 .auto-tab a .icon:last-child {
   margin-left: 0 !important;
 }

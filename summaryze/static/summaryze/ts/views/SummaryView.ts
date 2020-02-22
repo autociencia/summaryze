@@ -1,4 +1,5 @@
 import { Summary, Style } from '../models/index';
+import Prism from 'prismjs';
 
 /**
  * This class is responsible to present the summary and its HTML/CSS code.
@@ -13,18 +14,24 @@ export class SummaryView {
     }
 
     updateSummary(summary: Summary): void {
-        let template = this.templateSummary(summary);
+        const template = this.templateSummary(summary);
         this._element.html(template);
     }
 
     updateHTML(summary: Summary): void {
-        let template = this.templateHTML(summary);
+        const template = this.templateHTML(summary);
         this._element.html(template);
+        
+        const code = document.querySelector('.language-markup') as HTMLElement;
+        Prism.highlightElement(code);
     }
 
     updateCSS(style: Style): void {
-        let template = this.templateCSS(style);
+        const template = this.templateCSS(style);
         this._element.html(template);
+
+        const code = document.querySelector('.language-css') as HTMLElement;
+        Prism.highlightElement(code);
     }
 
     private templateSummary(summary: Summary): string {
@@ -47,14 +54,14 @@ export class SummaryView {
             .replace(/>/g, "&gt;");
 
         return `
-            <pre><code>${strSummary}</code></pre>
+            <pre><code class="language-markup">${strSummary}</code></pre>
         `;
     }
 
     private templateCSS(style: Style): string {
         let strStyle = style.content.replace(/^\s+/gm, '');
         return `
-            <pre><code>${strStyle}</code></pre>
+            <pre><code class="language-css">${strStyle}</code></pre>
         `;
     }
 }
