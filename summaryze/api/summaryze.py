@@ -104,7 +104,7 @@ def create_summary(titles):
     :return: a pretty indexed summary in HTML format
     """
 
-    summary = f'<div class="summary-post">{index_summary(titles)[0]}</div>'
+    summary = f'<div class="summary-post"><b>Index</b><br>{index_summary(titles)[0]}</div>'
     pretty_summary = BeautifulSoup(summary, 'lxml').body.next.prettify()
 
     return pretty_summary
