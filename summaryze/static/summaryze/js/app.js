@@ -146,7 +146,7 @@ System.register("summaryze/static/summaryze/ts/views/StyleListView", [], functio
                     this._element.html(strStyles);
                 }
                 template(style) {
-                    return `<span id="${style.id}" class="style-list-item">${style.name}</span>`;
+                    return `<span id="${style.id}" class="style-list-item" title='Change current style to "${style.name}"'>${style.name}</span>`;
                 }
             };
             exports_7("StyleListView", StyleListView);

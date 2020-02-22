@@ -18,6 +18,6 @@ export class StyleListView {
     }
 
     private template(style: Style): string {
-        return `<span id="${style.id}" class="style-list-item">${style.name}</span>`;
+        return `<span id="${style.id}" class="style-list-item" title='Change current style to "${style.name}"'>${style.name}</span>`;
     }
 }

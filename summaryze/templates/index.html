@@ -41,7 +41,7 @@
                 </span>
               </div>
               <div class="control">
-                <a id="url-search" class="button auto-blue has-text-light is-medium auto-btn-hover auto-btn-border">
+                <a id="url-search" class="button auto-blue has-text-light is-medium auto-btn-hover auto-btn-border" title="Find result">
                   Search
                 </a>
               </div>
@@ -54,7 +54,7 @@
       <section class="hero has-background-light">
         <div class="hero-body">
           <div class="container">
-            <div class="columns is-desktop">
+            <div class="columns is-desktop is-flex-tablet">
               <div class="column is-10">
 
                 <div class="card">
@@ -62,9 +62,9 @@
                     <div class="card-header-title ">
 
                       <div class="auto-tab">
-                        <span class="auto-tab-container"><a id="summary-btn"><span class="icon"><i class="fa fa-list"></i></span>Summary</a></span>
-                        <span class="auto-tab-container"><a id="html-btn"><span class="icon"><i class="fab fa-html5"></i></span>HTML</a></span>
-                        <span class="auto-tab-container"><a id="css-btn"><span class="icon"><i class="fab fa-css3"></i></span>CSS</a></span>
+                        <span class="auto-tab-container" title="Shows summary"><a id="summary-btn"><span class="icon"><i class="fa fa-list"></i></span>Summary</a></span>
+                        <span class="auto-tab-container" title="Shows HTML code"><a id="html-btn"><span class="icon"><i class="fab fa-html5"></i></span>HTML</a></span>
+                        <span class="auto-tab-container" title="Shows CSS code"><a id="css-btn"><span class="icon"><i class="fab fa-css3"></i></span>CSS</a></span>
                       </div>
 
                     </div>
@@ -97,6 +97,13 @@
           </div>
         </div>
       </section>
+      <footer id="footer-credits">
+        <table oncontextmenu="return false" ondragstart="return false" width="100%" cellspacing="0" cellpadding="5" border="0">
+        <tbody><tr>
+        <td style="width:72%;text-align:center;">© <a href="/" title="Summaryze">Summaryze</a> - 2020 | All rights reserved | Developed by: <a href="https://www.linkedin.com/in/clederson-cruz/" rel="nofollow" target="_blank" title="Clederson Cruz">Clederson</a>. Property of <a href="https://www.autociencia.blogspot.com.br" title="Autociência">Autociência</a>.</td>
+        </tr>
+        </tbody></table>
+      </footer>
       <script>
         SystemJS.config({
             baseURL: "{{ url_for('static', filename='summaryze/js/app.js') }}",
