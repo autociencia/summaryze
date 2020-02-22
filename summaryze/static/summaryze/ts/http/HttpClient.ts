@@ -1,10 +1,13 @@
+import { NotificationEvent } from '../events/index';
+import { NotificationController } from '../controllers/index'
+
 /**
  * HtppClient, that only makes GET requests to obtain data. 
  */
 
 export class HttpClient {
 
-    fetchPage(url: string, callback: Function): void {
+    fetchPage(url: string, callback: Function, errorFunction: Function): void {
         $.ajax({
             type: 'GET',
             cache: false,
@@ -12,7 +15,7 @@ export class HttpClient {
             success: (data) => callback(data),
             dataType: 'html',
             contentType: 'text',
-            error: (response) => console.error(response.responseText)
+            error: (response) => errorFunction(response.responseText)
         });
     }
 }

@@ -1,6 +1,6 @@
 import { SearchBtn, HtmlBtn, CssBtn, StyleListBtns } from './events/index';
 import { SummaryCache, StyleListBtnsCache } from './cache/index';
-import { StyleListController } from './controllers/StyleListController';
+import { StyleListController } from './controllers/index';
 import { ObjectUtils } from './utils/index';
 
 export class App {

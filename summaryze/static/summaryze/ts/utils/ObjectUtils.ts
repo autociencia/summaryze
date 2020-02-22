@@ -9,7 +9,7 @@ export class ObjectUtils {
     }
 
     static exists(obj: any): boolean {
-        return !(obj === null || obj === undefined || obj === '' || obj === false);
+        return !(obj === null || obj === undefined || obj === '' || obj === false || obj === []);
     }
 
     static nonExists(obj: any): boolean {

@@ -4,6 +4,7 @@ import { SummaryBuilder } from '../builder/SummaryBuilder';
 import { Summary } from '../models/index';
 import { StyleListBtns } from './index';
 import { ObjectUtils } from '../utils/index';
+import { NotificationEvent } from './NotificationEvent';
 
 /**
  * All performed actions on button Search is structured here.
@@ -26,7 +27,8 @@ export class SearchBtn {
 
         const endpoint = `/summary?url=${url}`;
         const httpClient: HttpClient = new HttpClient();
-        httpClient.fetchPage(endpoint, fetchEvent);
+        const errorFunction = new NotificationEvent().notifyError;
+        httpClient.fetchPage(endpoint, fetchEvent, errorFunction);
     }
 }
 
