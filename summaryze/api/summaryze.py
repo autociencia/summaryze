@@ -139,7 +139,7 @@ def main(args):
         summary = get_summary(url)
         print(summary)
     except Exception as e:
-        print(str(e))
+        print(f'ERROR: {e}')
 
 
 if __name__ == "__main__":
