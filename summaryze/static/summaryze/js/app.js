@@ -653,8 +653,8 @@ System.register("summaryze/static/summaryze/ts/data/StyleList", ["summaryze/stat
                 `
                         },
                         {
-                            id: 'notebook',
-                            name: 'Notebook',
+                            id: 'paper',
+                            name: 'Paper',
                             content: `
                 /*---Summary of Articles---*/
                 .summary-post {

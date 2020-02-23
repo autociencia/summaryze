@@ -374,8 +374,8 @@ export class StyleList {
                 `
             },
             {
-                id: 'notebook',
-                name: 'Notebook',
+                id: 'paper',
+                name: 'Paper',
                 content: `
                 /*---Summary of Articles---*/
                 .summary-post {
