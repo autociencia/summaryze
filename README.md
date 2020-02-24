@@ -1,12 +1,13 @@
 # Summaryze
+![Summaryze icon](github/summaryze-icon.ico)
 A script to generate summary for blogspot articles. You can try it online [here](https://summaryze.herokuapp.com/).
 
-# How it works
+# :information_source: How it works
 Front-end receives an URL and send it to back-end. The front-end was made with TypeScript. Back-end receives the URL and pass it to its API, it validates, process and (if valid) returns the generated HTML code of summary from that URL to front-end. Back-end was made in Python with Flask.
 
 **Note**: article needs to have at least title (h1, h2, h3, h4, h5 or h6).
 
-# How to use
+# :information_source: How to use
 First, visit a blog from Blogger.
 
 Second, copy the URL of a post.
@@ -17,7 +18,7 @@ Then, paste the URL in the **input box** on app and click on **search**.
 Below, the search box has a link example. You may use it to test the app. Result:
 ![Tutorial Usage - Summaryze](github/tutorial-usage2.png)
 
-# How to run
+# :arrow_forward: How to run
 You need to some tools:
 
 * [git](https://git-scm.com/downloads)
@@ -25,13 +26,13 @@ You need to some tools:
 * [python](https://www.python.org/downloads/)
 * [sass](https://sass-lang.com/install) (will be ported to Node dependencies)
 
-## Clone
+## :clipboard: Clone
 ```bash
 $ git clone https://github.com/autociencia/summaryze.git
 $ cd summaryze
 ```
 
-## Setup Python
+## :wrench: Setup Python
 After clone and enter in summaryze project, create a virtual environment:
 
 ```bash
@@ -50,33 +51,33 @@ Install Python dependencies:
 $ pip3 install -r requirements.txt
 ```
 
-## Setup TypeScript
+## :wrench: Setup TypeScript
 After clone and enter in summaryze project, install Node dependencies:
 
 ```bash
 $ npm install
 ```
 
-## Run
+## :arrow_forward: Run
 After install all dependencies, simply:
 ```bash
 $ ./run.py
 ```
 Then, enter on http://localhost:5000.
 
-### Tests
+### :syringe: Tests
 To test the API, enter into summaryze module (it contains \_\_init\_\_.py file) and run:
 ```bash
 $ python -m unittest discover
 ```
 
-### Build
+### :hammer_and_wrench: Build
 To build TS files, enter in summaryze project and run:
 ```bash
 $ grunt
 ```
 
-# Technologies
+# :globe_with_meridians: Technologies
 **Front-end** was developed using:
 * [Bulma CSS framework](https://bulma.io/)
 * [SASS](https://sass-lang.com/)
@@ -87,30 +88,32 @@ $ grunt
 **Back-end** was developed using Python with [Flask Framework](https://palletsprojects.com/p/flask/).
 
 
-# Architecture
-Summaryze was designed in MVC pattern. Structure:
+# :triangular_ruler: Architecture
+Summaryze was designed in MVC pattern.
 
-* **api**: contains the core application that generate summaries (model).
-* **templates**: are HTML pages where the summary will be displayed (views).
-* **routes.py**: controllers that handle requests and serves its responses with model binding in view.
-* **config**: app configuration. You need to generate a new SECRET KEY to production usage.
-* **static**: static files like images, favicons, CSS, JS...
-* **tests**: unit tests for Python code.
-* **\_\_init\_\_.py**: initialize the Flask App.
+## Python
+Summaryze module has structured as:
+* :books: **api**: contains the core application that generate summaries (model).
+* :bar_chart: **templates**: are HTML pages where the summary will be displayed (views).
+* :twisted_rightwards_arrows: **routes.py**: controllers that handle requests and serves its responses with model binding in view.
+* :gear: **config**: app configuration. You need to generate a new SECRET KEY to production usage.
+* :page_facing_up: **static**: static files like images, favicons, CSS, JS...
+* :syringe: **tests**: unit tests for Python code.
+* :arrow_forward: **\_\_init\_\_.py**: initialize the Flask App.
 
 ## TypeScript
 TypeScript files are located in **static/summaryze/ts**. TypeScript structure:
 
-* **builder**: contains classes with builder pattern.
-* **cache**: classes that manipulate data from browser session.
-* **controllers**: bind models on views.
-* **data**: contains all summary styles.
-* **events**: where the logic is performed to do something on page.
-* **http**: makes http ajax requests.
-* **models**: where Summary and Style are located.
-* **utils**: to aggregate reusable functions.
-* **views**: where models are displayed.
-* **app.ts**: is the main file; it initializes the TS app.
+* :hammer_and_wrench: **builder**: contains classes with builder pattern.
+* :floppy_disk: **cache**: classes that manipulate data from browser session.
+* :twisted_rightwards_arrows: **controllers**: bind models on views.
+* :books: **data**: contains all summary styles.
+* :fireworks: **events**: where the logic is performed to do something on page.
+* :link: **http**: makes http ajax requests.
+* :page_with_curl: **models**: where Summary and Style are located.
+* :outbox_tray: **utils**: to aggregate reusable functions.
+* :bar_chart: **views**: where models are displayed.
+* :arrow_forward: **app.ts**: is the main file; it initializes the TS app.
 
 
 # Final Considerations
