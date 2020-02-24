@@ -1,6 +1,6 @@
 # Summaryze
 ![Summaryze icon](github/summaryze-icon.ico)
-A script to generate summary for blogspot articles. You can try it online [here](https://summaryze.herokuapp.com/).
+A web solution to generate summary for blogspot articles. You can try it online [here](https://summaryze.herokuapp.com/).
 
 # :information_source: How it works
 Front-end receives an URL and send it to back-end. The front-end was made with TypeScript. Back-end receives the URL and pass it to its API, it validates, process and (if valid) returns the generated HTML code of summary from that URL to front-end. Back-end was made in Python with Flask.
