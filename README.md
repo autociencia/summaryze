@@ -120,6 +120,6 @@ We developed Summaryze in Python for command line (CLI). But we seen the possibi
 
 **Roadmap**
 
-* [] Expand project to Medium, Wordpress and others.
-* [] Possibility to generate summary from other sources (like directly or via files)
-* [] Port SASS to Node dependencies.
+* [ ] Expand project to Medium, Wordpress and others.
+* [ ] Possibility to generate summary from other sources (like directly or via files)
+* [ ] Port SASS to Node dependencies.
