@@ -79,7 +79,7 @@ class TestSummary(unittest.TestCase):
 
         str_expected = """
         <div class="summary-post">
-            <b>Index</b>
+            <b>Índice</b>
             <br>
             <ol>
                 <li><a href="#ANCHOR">Title One</a></li>
@@ -118,7 +118,7 @@ class TestSummary(unittest.TestCase):
 
         str_expected = """
         <div class="summary-post">
-            <b>Index</b>
+            <b>Índice</b>
             <br>
             <ol>
                 <li><a href="#ANCHOR">Title One</a>
@@ -169,7 +169,7 @@ class TestSummary(unittest.TestCase):
 
         str_expected = """
         <div class="summary-post">
-            <b>Index</b>
+            <b>Índice</b>
             <br>
             <ol>
                 <li><a href="#ANCHOR">Title One</a>
@@ -210,7 +210,7 @@ class TestSummary(unittest.TestCase):
 
         str_expected = """
         <div class="summary-post">
-            <b>Index</b>
+            <b>Índice</b>
             <br>
             <ol>
                 <li><a href="#ANCHOR">Title One</a></li>

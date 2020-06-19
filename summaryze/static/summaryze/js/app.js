@@ -1,78 +1,48 @@
-System.register("summaryze/static/summaryze/ts/http/HttpClient", [], function (exports_1, context_1) {
+System.register("summaryze/static/summaryze/ts/models/Summary", [], function (exports_1, context_1) {
     "use strict";
-    var HttpClient;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [],
         execute: function () {
-            HttpClient = class HttpClient {
-                fetchPage(url, callback, errorFunction) {
-                    $.ajax({
-                        type: 'GET',
-                        cache: false,
-                        url: url,
-                        success: (data) => callback(data),
-                        dataType: 'html',
-                        contentType: 'text',
-                        error: (response) => errorFunction(response.responseText)
-                    });
-                }
-            };
-            exports_1("HttpClient", HttpClient);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/http/index", ["summaryze/static/summaryze/ts/http/HttpClient"], function (exports_2, context_2) {
+System.register("summaryze/static/summaryze/ts/models/Style", [], function (exports_2, context_2) {
     "use strict";
     var __moduleName = context_2 && context_2.id;
+    return {
+        setters: [],
+        execute: function () {
+        }
+    };
+});
+System.register("summaryze/static/summaryze/ts/models/index", ["summaryze/static/summaryze/ts/models/Summary", "summaryze/static/summaryze/ts/models/Style"], function (exports_3, context_3) {
+    "use strict";
+    var __moduleName = context_3 && context_3.id;
     function exportStar_1(m) {
         var exports = {};
         for (var n in m) {
             if (n !== "default") exports[n] = m[n];
         }
-        exports_2(exports);
+        exports_3(exports);
     }
     return {
         setters: [
-            function (HttpClient_1_1) {
-                exportStar_1(HttpClient_1_1);
+            function (Summary_1_1) {
+                exportStar_1(Summary_1_1);
+            },
+            function (Style_1_1) {
+                exportStar_1(Style_1_1);
             }
         ],
         execute: function () {
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/models/Summary", [], function (exports_3, context_3) {
-    "use strict";
-    var __moduleName = context_3 && context_3.id;
-    return {
-        setters: [],
-        execute: function () {
-        }
-    };
-});
-System.register("summaryze/static/summaryze/ts/models/Style", [], function (exports_4, context_4) {
-    "use strict";
-    var __moduleName = context_4 && context_4.id;
-    return {
-        setters: [],
-        execute: function () {
-        }
-    };
-});
-System.register("summaryze/static/summaryze/ts/models/index", [], function (exports_5, context_5) {
-    "use strict";
-    var __moduleName = context_5 && context_5.id;
-    return {
-        setters: [],
-        execute: function () {
-        }
-    };
-});
-System.register("summaryze/static/summaryze/ts/views/SummaryView", ["prismjs"], function (exports_6, context_6) {
+System.register("summaryze/static/summaryze/ts/views/SummaryView", ["prismjs"], function (exports_4, context_4) {
     "use strict";
     var prismjs_1, SummaryView;
-    var __moduleName = context_6 && context_6.id;
+    var __moduleName = context_4 && context_4.id;
     return {
         setters: [
             function (prismjs_1_1) {
@@ -126,14 +96,14 @@ System.register("summaryze/static/summaryze/ts/views/SummaryView", ["prismjs"], 
         `;
                 }
             };
-            exports_6("SummaryView", SummaryView);
+            exports_4("SummaryView", SummaryView);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/views/StyleListView", [], function (exports_7, context_7) {
+System.register("summaryze/static/summaryze/ts/views/StyleListView", [], function (exports_5, context_5) {
     "use strict";
     var StyleListView;
-    var __moduleName = context_7 && context_7.id;
+    var __moduleName = context_5 && context_5.id;
     return {
         setters: [],
         execute: function () {
@@ -149,14 +119,14 @@ System.register("summaryze/static/summaryze/ts/views/StyleListView", [], functio
                     return `<span id="${style.id}" class="style-list-item" title='Change current style to "${style.name}"'>${style.name}</span>`;
                 }
             };
-            exports_7("StyleListView", StyleListView);
+            exports_5("StyleListView", StyleListView);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/views/NotificationView", [], function (exports_8, context_8) {
+System.register("summaryze/static/summaryze/ts/views/NotificationView", [], function (exports_6, context_6) {
     "use strict";
     var NotificationView;
-    var __moduleName = context_8 && context_8.id;
+    var __moduleName = context_6 && context_6.id;
     return {
         setters: [],
         execute: function () {
@@ -177,19 +147,19 @@ System.register("summaryze/static/summaryze/ts/views/NotificationView", [], func
         `;
                 }
             };
-            exports_8("NotificationView", NotificationView);
+            exports_6("NotificationView", NotificationView);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/views/index", ["summaryze/static/summaryze/ts/views/SummaryView", "summaryze/static/summaryze/ts/views/StyleListView", "summaryze/static/summaryze/ts/views/NotificationView"], function (exports_9, context_9) {
+System.register("summaryze/static/summaryze/ts/views/index", ["summaryze/static/summaryze/ts/views/SummaryView", "summaryze/static/summaryze/ts/views/StyleListView", "summaryze/static/summaryze/ts/views/NotificationView"], function (exports_7, context_7) {
     "use strict";
-    var __moduleName = context_9 && context_9.id;
+    var __moduleName = context_7 && context_7.id;
     function exportStar_2(m) {
         var exports = {};
         for (var n in m) {
             if (n !== "default") exports[n] = m[n];
         }
-        exports_9(exports);
+        exports_7(exports);
     }
     return {
         setters: [
@@ -207,10 +177,10 @@ System.register("summaryze/static/summaryze/ts/views/index", ["summaryze/static/
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/controllers/SummaryController", ["summaryze/static/summaryze/ts/views/index"], function (exports_10, context_10) {
+System.register("summaryze/static/summaryze/ts/controllers/SummaryController", ["summaryze/static/summaryze/ts/views/index"], function (exports_8, context_8) {
     "use strict";
     var index_1, SummaryController;
-    var __moduleName = context_10 && context_10.id;
+    var __moduleName = context_8 && context_8.id;
     return {
         setters: [
             function (index_1_1) {
@@ -232,14 +202,14 @@ System.register("summaryze/static/summaryze/ts/controllers/SummaryController", [
                     view.updateCSS(style);
                 }
             };
-            exports_10("SummaryController", SummaryController);
+            exports_8("SummaryController", SummaryController);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/utils/ObjectUtils", [], function (exports_11, context_11) {
+System.register("summaryze/static/summaryze/ts/utils/ObjectUtils", [], function (exports_9, context_9) {
     "use strict";
     var ObjectUtils;
-    var __moduleName = context_11 && context_11.id;
+    var __moduleName = context_9 && context_9.id;
     return {
         setters: [],
         execute: function () {
@@ -254,19 +224,19 @@ System.register("summaryze/static/summaryze/ts/utils/ObjectUtils", [], function 
                     return !ObjectUtils.exists(obj);
                 }
             };
-            exports_11("ObjectUtils", ObjectUtils);
+            exports_9("ObjectUtils", ObjectUtils);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/utils/index", ["summaryze/static/summaryze/ts/utils/ObjectUtils"], function (exports_12, context_12) {
+System.register("summaryze/static/summaryze/ts/utils/index", ["summaryze/static/summaryze/ts/utils/ObjectUtils"], function (exports_10, context_10) {
     "use strict";
-    var __moduleName = context_12 && context_12.id;
+    var __moduleName = context_10 && context_10.id;
     function exportStar_3(m) {
         var exports = {};
         for (var n in m) {
             if (n !== "default") exports[n] = m[n];
         }
-        exports_12(exports);
+        exports_10(exports);
     }
     return {
         setters: [
@@ -278,10 +248,10 @@ System.register("summaryze/static/summaryze/ts/utils/index", ["summaryze/static/
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/data/StyleList", ["summaryze/static/summaryze/ts/utils/index"], function (exports_13, context_13) {
+System.register("summaryze/static/summaryze/ts/data/StyleList", ["summaryze/static/summaryze/ts/utils/index"], function (exports_11, context_11) {
     "use strict";
     var index_2, StyleList;
-    var __moduleName = context_13 && context_13.id;
+    var __moduleName = context_11 && context_11.id;
     return {
         setters: [
             function (index_2_1) {
@@ -831,19 +801,19 @@ System.register("summaryze/static/summaryze/ts/data/StyleList", ["summaryze/stat
                     return style;
                 }
             };
-            exports_13("StyleList", StyleList);
+            exports_11("StyleList", StyleList);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/data/index", ["summaryze/static/summaryze/ts/data/StyleList"], function (exports_14, context_14) {
+System.register("summaryze/static/summaryze/ts/data/index", ["summaryze/static/summaryze/ts/data/StyleList"], function (exports_12, context_12) {
     "use strict";
-    var __moduleName = context_14 && context_14.id;
+    var __moduleName = context_12 && context_12.id;
     function exportStar_4(m) {
         var exports = {};
         for (var n in m) {
             if (n !== "default") exports[n] = m[n];
         }
-        exports_14(exports);
+        exports_12(exports);
     }
     return {
         setters: [
@@ -855,10 +825,10 @@ System.register("summaryze/static/summaryze/ts/data/index", ["summaryze/static/s
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/controllers/StyleListController", ["summaryze/static/summaryze/ts/data/index", "summaryze/static/summaryze/ts/views/index"], function (exports_15, context_15) {
+System.register("summaryze/static/summaryze/ts/controllers/StyleListController", ["summaryze/static/summaryze/ts/data/index", "summaryze/static/summaryze/ts/views/index"], function (exports_13, context_13) {
     "use strict";
     var index_3, index_4, StyleListController;
-    var __moduleName = context_15 && context_15.id;
+    var __moduleName = context_13 && context_13.id;
     return {
         setters: [
             function (index_3_1) {
@@ -876,14 +846,14 @@ System.register("summaryze/static/summaryze/ts/controllers/StyleListController",
                     view.update(styleList.getAll());
                 }
             };
-            exports_15("StyleListController", StyleListController);
+            exports_13("StyleListController", StyleListController);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/controllers/NotificationController", ["summaryze/static/summaryze/ts/views/index"], function (exports_16, context_16) {
+System.register("summaryze/static/summaryze/ts/controllers/NotificationController", ["summaryze/static/summaryze/ts/views/index"], function (exports_14, context_14) {
     "use strict";
     var index_5, NotificationController;
-    var __moduleName = context_16 && context_16.id;
+    var __moduleName = context_14 && context_14.id;
     return {
         setters: [
             function (index_5_1) {
@@ -897,19 +867,19 @@ System.register("summaryze/static/summaryze/ts/controllers/NotificationControlle
                     view.updateError(error);
                 }
             };
-            exports_16("NotificationController", NotificationController);
+            exports_14("NotificationController", NotificationController);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/controllers/index", ["summaryze/static/summaryze/ts/controllers/SummaryController", "summaryze/static/summaryze/ts/controllers/StyleListController", "summaryze/static/summaryze/ts/controllers/NotificationController"], function (exports_17, context_17) {
+System.register("summaryze/static/summaryze/ts/controllers/index", ["summaryze/static/summaryze/ts/controllers/SummaryController", "summaryze/static/summaryze/ts/controllers/StyleListController", "summaryze/static/summaryze/ts/controllers/NotificationController"], function (exports_15, context_15) {
     "use strict";
-    var __moduleName = context_17 && context_17.id;
+    var __moduleName = context_15 && context_15.id;
     function exportStar_5(m) {
         var exports = {};
         for (var n in m) {
             if (n !== "default") exports[n] = m[n];
         }
-        exports_17(exports);
+        exports_15(exports);
     }
     return {
         setters: [
@@ -927,10 +897,10 @@ System.register("summaryze/static/summaryze/ts/controllers/index", ["summaryze/s
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/builder/SummaryBuilder", ["summaryze/static/summaryze/ts/data/index"], function (exports_18, context_18) {
+System.register("summaryze/static/summaryze/ts/builder/SummaryBuilder", ["summaryze/static/summaryze/ts/data/index"], function (exports_16, context_16) {
     "use strict";
     var index_6, SummaryBuilder;
-    var __moduleName = context_18 && context_18.id;
+    var __moduleName = context_16 && context_16.id;
     return {
         setters: [
             function (index_6_1) {
@@ -955,19 +925,19 @@ System.register("summaryze/static/summaryze/ts/builder/SummaryBuilder", ["summar
                     return this._summary;
                 }
             };
-            exports_18("SummaryBuilder", SummaryBuilder);
+            exports_16("SummaryBuilder", SummaryBuilder);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/builder/index", ["summaryze/static/summaryze/ts/builder/SummaryBuilder"], function (exports_19, context_19) {
+System.register("summaryze/static/summaryze/ts/builder/index", ["summaryze/static/summaryze/ts/builder/SummaryBuilder"], function (exports_17, context_17) {
     "use strict";
-    var __moduleName = context_19 && context_19.id;
+    var __moduleName = context_17 && context_17.id;
     function exportStar_6(m) {
         var exports = {};
         for (var n in m) {
             if (n !== "default") exports[n] = m[n];
         }
-        exports_19(exports);
+        exports_17(exports);
     }
     return {
         setters: [
@@ -979,20 +949,106 @@ System.register("summaryze/static/summaryze/ts/builder/index", ["summaryze/stati
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/events/NotificationEvent", ["summaryze/static/summaryze/ts/controllers/index"], function (exports_20, context_20) {
+System.register("summaryze/static/summaryze/ts/events/GetSummaryBtn", ["summaryze/static/summaryze/ts/controllers/index", "summaryze/static/summaryze/ts/builder/index", "summaryze/static/summaryze/ts/events/index", "summaryze/static/summaryze/ts/utils/index"], function (exports_18, context_18) {
     "use strict";
-    var index_7, NotificationEvent;
-    var __moduleName = context_20 && context_20.id;
+    var index_7, index_8, index_9, index_10, GetSummaryBtn;
+    var __moduleName = context_18 && context_18.id;
     return {
         setters: [
             function (index_7_1) {
                 index_7 = index_7_1;
+            },
+            function (index_8_1) {
+                index_8 = index_8_1;
+            },
+            function (index_9_1) {
+                index_9 = index_9_1;
+            },
+            function (index_10_1) {
+                index_10 = index_10_1;
+            }
+        ],
+        execute: function () {
+            GetSummaryBtn = class GetSummaryBtn {
+                static fetchEvent(content) {
+                    let cachedStyle = sessionStorage.getItem('summary_css');
+                    if (index_10.ObjectUtils.nonExists(cachedStyle)) {
+                        cachedStyle = 'default';
+                    }
+                    const summary = new index_8.SummaryBuilder()
+                        .content(content)
+                        .style(cachedStyle)
+                        .build();
+                    const controller = new index_7.SummaryController();
+                    controller.updateSummary(summary);
+                    sessionStorage.setItem('summary_html', summary.content.innerHTML);
+                    sessionStorage.setItem('summary_css', cachedStyle);
+                    index_9.StyleListBtns.updateBtn(cachedStyle);
+                }
+            };
+            exports_18("GetSummaryBtn", GetSummaryBtn);
+        }
+    };
+});
+System.register("summaryze/static/summaryze/ts/http/HttpClient", [], function (exports_19, context_19) {
+    "use strict";
+    var HttpClient;
+    var __moduleName = context_19 && context_19.id;
+    return {
+        setters: [],
+        execute: function () {
+            HttpClient = class HttpClient {
+                fetchPage(url, content, callback, errorFunction) {
+                    $.ajax({
+                        type: 'POST',
+                        cache: false,
+                        url: url,
+                        data: content,
+                        success: (data) => callback(data),
+                        dataType: 'html',
+                        contentType: 'application/json; charset=utf-8',
+                        error: (response) => errorFunction(response.responseText)
+                    });
+                }
+            };
+            exports_19("HttpClient", HttpClient);
+        }
+    };
+});
+System.register("summaryze/static/summaryze/ts/http/index", ["summaryze/static/summaryze/ts/http/HttpClient"], function (exports_20, context_20) {
+    "use strict";
+    var __moduleName = context_20 && context_20.id;
+    function exportStar_7(m) {
+        var exports = {};
+        for (var n in m) {
+            if (n !== "default") exports[n] = m[n];
+        }
+        exports_20(exports);
+    }
+    return {
+        setters: [
+            function (HttpClient_1_1) {
+                exportStar_7(HttpClient_1_1);
+            }
+        ],
+        execute: function () {
+        }
+    };
+});
+System.register("summaryze/static/summaryze/ts/events/NotificationEvent", ["summaryze/static/summaryze/ts/controllers/index"], function (exports_21, context_21) {
+    "use strict";
+    var index_11, NotificationEvent;
+    var __moduleName = context_21 && context_21.id;
+    return {
+        setters: [
+            function (index_11_1) {
+                index_11 = index_11_1;
             }
         ],
         execute: function () {
             NotificationEvent = class NotificationEvent {
                 notifyError(message) {
-                    const controller = new index_7.NotificationController();
+                    const controller = new index_11.NotificationController();
                     controller.updateError(message);
                     NotificationEvent.addCloseEvent();
                 }
@@ -1003,144 +1059,99 @@ System.register("summaryze/static/summaryze/ts/events/NotificationEvent", ["summ
                     });
                 }
             };
-            exports_20("NotificationEvent", NotificationEvent);
+            exports_21("NotificationEvent", NotificationEvent);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/events/SearchBtn", ["summaryze/static/summaryze/ts/http/index", "summaryze/static/summaryze/ts/controllers/index", "summaryze/static/summaryze/ts/builder/index", "summaryze/static/summaryze/ts/events/index", "summaryze/static/summaryze/ts/utils/index", "summaryze/static/summaryze/ts/events/NotificationEvent"], function (exports_21, context_21) {
+System.register("summaryze/static/summaryze/ts/events/SearchBtn", ["summaryze/static/summaryze/ts/http/index", "summaryze/static/summaryze/ts/events/index", "summaryze/static/summaryze/ts/utils/index", "summaryze/static/summaryze/ts/events/NotificationEvent"], function (exports_22, context_22) {
     "use strict";
-    var index_8, index_9, index_10, index_11, index_12, NotificationEvent_1, SearchBtn;
-    var __moduleName = context_21 && context_21.id;
-    return {
-        setters: [
-            function (index_8_1) {
-                index_8 = index_8_1;
-            },
-            function (index_9_1) {
-                index_9 = index_9_1;
-            },
-            function (index_10_1) {
-                index_10 = index_10_1;
-            },
-            function (index_11_1) {
-                index_11 = index_11_1;
-            },
-            function (index_12_1) {
-                index_12 = index_12_1;
-            },
-            function (NotificationEvent_1_1) {
-                NotificationEvent_1 = NotificationEvent_1_1;
-            }
-        ],
-        execute: function () {
-            SearchBtn = class SearchBtn {
-                searchAndShowSummary() {
-                    const btn = document.querySelector('#url-search');
-                    const url_input = document.querySelector('#url-input');
-                    if (index_12.ObjectUtils.nonExists(btn) || index_12.ObjectUtils.nonExists(url_input)) {
-                        throw 'Error: a problem ocurred in search box';
-                    }
-                    const url = url_input.value.trim();
-                    if (url === "") {
-                        return;
-                    }
-                    const endpoint = `/summary?url=${url}`;
-                    const httpClient = new index_8.HttpClient();
-                    const errorFunction = new NotificationEvent_1.NotificationEvent().notifyError;
-                    httpClient.fetchPage(endpoint, SearchBtn.fetchEvent, errorFunction);
-                }
-                static fetchEvent(content) {
-                    let cachedStyle = sessionStorage.getItem('summary_css');
-                    if (index_12.ObjectUtils.nonExists(cachedStyle)) {
-                        cachedStyle = 'default';
-                    }
-                    const summary = new index_10.SummaryBuilder()
-                        .content(content)
-                        .style(cachedStyle)
-                        .build();
-                    const controller = new index_9.SummaryController();
-                    controller.updateSummary(summary);
-                    sessionStorage.setItem('summary_html', summary.content.innerHTML);
-                    sessionStorage.setItem('summary_css', cachedStyle);
-                    index_11.StyleListBtns.updateBtn(cachedStyle);
-                }
-            };
-            exports_21("SearchBtn", SearchBtn);
-        }
-    };
-});
-System.register("summaryze/static/summaryze/ts/events/HtmlBtn", ["summaryze/static/summaryze/ts/builder/index", "summaryze/static/summaryze/ts/controllers/index", "summaryze/static/summaryze/ts/utils/index"], function (exports_22, context_22) {
-    "use strict";
-    var index_13, index_14, index_15, HtmlBtn;
+    var index_12, index_13, index_14, NotificationEvent_1, SearchBtn;
     var __moduleName = context_22 && context_22.id;
     return {
         setters: [
+            function (index_12_1) {
+                index_12 = index_12_1;
+            },
             function (index_13_1) {
                 index_13 = index_13_1;
             },
             function (index_14_1) {
                 index_14 = index_14_1;
             },
-            function (index_15_1) {
-                index_15 = index_15_1;
+            function (NotificationEvent_1_1) {
+                NotificationEvent_1 = NotificationEvent_1_1;
             }
         ],
         execute: function () {
-            HtmlBtn = class HtmlBtn {
-                showHTML() {
-                    const content = sessionStorage.getItem('summary_html');
-                    if (index_15.ObjectUtils.nonExists(content)) {
+            SearchBtn = class SearchBtn extends index_13.GetSummaryBtn {
+                sendAndShow() {
+                    const btn = document.querySelector('#url-search');
+                    const url_input = document.querySelector('#url-input');
+                    if (index_14.ObjectUtils.nonExists(btn) || index_14.ObjectUtils.nonExists(url_input)) {
+                        throw 'Error: a problem ocurred in search box';
+                    }
+                    const url = JSON.stringify({ 'url': url_input.value.trim() });
+                    if (url === "") {
                         return;
                     }
-                    const summary = new index_13.SummaryBuilder().content(content).build();
-                    const controller = new index_14.SummaryController();
-                    controller.updateHTML(summary);
+                    const endpoint = `/summary/url`;
+                    const httpClient = new index_12.HttpClient();
+                    const errorFunction = new NotificationEvent_1.NotificationEvent().notifyError;
+                    httpClient.fetchPage(endpoint, url, index_13.GetSummaryBtn.fetchEvent, errorFunction);
                 }
             };
-            exports_22("HtmlBtn", HtmlBtn);
+            exports_22("SearchBtn", SearchBtn);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/events/CssBtn", ["summaryze/static/summaryze/ts/controllers/index", "summaryze/static/summaryze/ts/data/index", "summaryze/static/summaryze/ts/utils/index"], function (exports_23, context_23) {
+System.register("summaryze/static/summaryze/ts/events/UploudBtn", ["summaryze/static/summaryze/ts/http/index", "summaryze/static/summaryze/ts/events/index", "summaryze/static/summaryze/ts/utils/index"], function (exports_23, context_23) {
     "use strict";
-    var index_16, index_17, index_18, CssBtn;
+    var index_15, index_16, index_17, UploadBtn;
     var __moduleName = context_23 && context_23.id;
     return {
         setters: [
+            function (index_15_1) {
+                index_15 = index_15_1;
+            },
             function (index_16_1) {
                 index_16 = index_16_1;
             },
             function (index_17_1) {
                 index_17 = index_17_1;
-            },
-            function (index_18_1) {
-                index_18 = index_18_1;
             }
         ],
         execute: function () {
-            CssBtn = class CssBtn {
-                showCSS() {
-                    const styleId = sessionStorage.getItem('summary_css');
-                    if (index_18.ObjectUtils.nonExists(styleId)) {
+            UploadBtn = class UploadBtn extends index_16.GetSummaryBtn {
+                sendAndShow() {
+                    const btn = document.querySelector('#html-upload');
+                    const html_input = document.querySelector('#html-input');
+                    if (index_17.ObjectUtils.nonExists(btn) || index_17.ObjectUtils.nonExists(html_input)) {
+                        throw 'Error: a problem ocurred in HTML box';
+                    }
+                    const html = JSON.stringify({
+                        'html': `<div class="post-body">${html_input.value.trim()}</div>`
+                    });
+                    if (html === "") {
                         return;
                     }
-                    const style = new index_17.StyleList().get(styleId);
-                    const controller = new index_16.SummaryController();
-                    controller.updateCSS(style);
+                    const endpoint = `/summary/html`;
+                    const httpClient = new index_15.HttpClient();
+                    const errorFunction = new index_16.NotificationEvent().notifyError;
+                    httpClient.fetchPage(endpoint, html, index_16.GetSummaryBtn.fetchEvent, errorFunction);
                 }
             };
-            exports_23("CssBtn", CssBtn);
+            exports_23("UploadBtn", UploadBtn);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/events/StyleListBtns", ["summaryze/static/summaryze/ts/builder/SummaryBuilder", "summaryze/static/summaryze/ts/controllers/index", "summaryze/static/summaryze/ts/utils/index"], function (exports_24, context_24) {
+System.register("summaryze/static/summaryze/ts/events/HtmlBtn", ["summaryze/static/summaryze/ts/builder/index", "summaryze/static/summaryze/ts/controllers/index", "summaryze/static/summaryze/ts/utils/index"], function (exports_24, context_24) {
     "use strict";
-    var SummaryBuilder_2, index_19, index_20, StyleListBtns;
+    var index_18, index_19, index_20, HtmlBtn;
     var __moduleName = context_24 && context_24.id;
     return {
         setters: [
-            function (SummaryBuilder_2_1) {
-                SummaryBuilder_2 = SummaryBuilder_2_1;
+            function (index_18_1) {
+                index_18 = index_18_1;
             },
             function (index_19_1) {
                 index_19 = index_19_1;
@@ -1150,18 +1161,82 @@ System.register("summaryze/static/summaryze/ts/events/StyleListBtns", ["summaryz
             }
         ],
         execute: function () {
+            HtmlBtn = class HtmlBtn {
+                showHTML() {
+                    const content = sessionStorage.getItem('summary_html');
+                    if (index_20.ObjectUtils.nonExists(content)) {
+                        return;
+                    }
+                    const summary = new index_18.SummaryBuilder().content(content).build();
+                    const controller = new index_19.SummaryController();
+                    controller.updateHTML(summary);
+                }
+            };
+            exports_24("HtmlBtn", HtmlBtn);
+        }
+    };
+});
+System.register("summaryze/static/summaryze/ts/events/CssBtn", ["summaryze/static/summaryze/ts/controllers/index", "summaryze/static/summaryze/ts/data/index", "summaryze/static/summaryze/ts/utils/index"], function (exports_25, context_25) {
+    "use strict";
+    var index_21, index_22, index_23, CssBtn;
+    var __moduleName = context_25 && context_25.id;
+    return {
+        setters: [
+            function (index_21_1) {
+                index_21 = index_21_1;
+            },
+            function (index_22_1) {
+                index_22 = index_22_1;
+            },
+            function (index_23_1) {
+                index_23 = index_23_1;
+            }
+        ],
+        execute: function () {
+            CssBtn = class CssBtn {
+                showCSS() {
+                    const styleId = sessionStorage.getItem('summary_css');
+                    if (index_23.ObjectUtils.nonExists(styleId)) {
+                        return;
+                    }
+                    const style = new index_22.StyleList().get(styleId);
+                    const controller = new index_21.SummaryController();
+                    controller.updateCSS(style);
+                }
+            };
+            exports_25("CssBtn", CssBtn);
+        }
+    };
+});
+System.register("summaryze/static/summaryze/ts/events/StyleListBtns", ["summaryze/static/summaryze/ts/builder/SummaryBuilder", "summaryze/static/summaryze/ts/controllers/index", "summaryze/static/summaryze/ts/utils/index"], function (exports_26, context_26) {
+    "use strict";
+    var SummaryBuilder_2, index_24, index_25, StyleListBtns;
+    var __moduleName = context_26 && context_26.id;
+    return {
+        setters: [
+            function (SummaryBuilder_2_1) {
+                SummaryBuilder_2 = SummaryBuilder_2_1;
+            },
+            function (index_24_1) {
+                index_24 = index_24_1;
+            },
+            function (index_25_1) {
+                index_25 = index_25_1;
+            }
+        ],
+        execute: function () {
             StyleListBtns = class StyleListBtns {
                 applyStyle(event) {
                     const newStyleId = event.target.id;
                     const summary_text = sessionStorage.getItem('summary_html');
-                    if (index_20.ObjectUtils.nonExists(summary_text)) {
+                    if (index_25.ObjectUtils.nonExists(summary_text)) {
                         return;
                     }
                     const summary = new SummaryBuilder_2.SummaryBuilder()
                         .content(summary_text)
                         .style(newStyleId)
                         .build();
-                    const summaryController = new index_19.SummaryController();
+                    const summaryController = new index_24.SummaryController();
                     summaryController.updateSummary(summary);
                     StyleListBtns.updateBtn(newStyleId);
                 }
@@ -1177,56 +1252,62 @@ System.register("summaryze/static/summaryze/ts/events/StyleListBtns", ["summaryz
                     sessionStorage.setItem('summary_css', styleId);
                 }
             };
-            exports_24("StyleListBtns", StyleListBtns);
+            exports_26("StyleListBtns", StyleListBtns);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/events/index", ["summaryze/static/summaryze/ts/events/SearchBtn", "summaryze/static/summaryze/ts/events/HtmlBtn", "summaryze/static/summaryze/ts/events/CssBtn", "summaryze/static/summaryze/ts/events/StyleListBtns", "summaryze/static/summaryze/ts/events/NotificationEvent"], function (exports_25, context_25) {
+System.register("summaryze/static/summaryze/ts/events/index", ["summaryze/static/summaryze/ts/events/GetSummaryBtn", "summaryze/static/summaryze/ts/events/SearchBtn", "summaryze/static/summaryze/ts/events/UploudBtn", "summaryze/static/summaryze/ts/events/HtmlBtn", "summaryze/static/summaryze/ts/events/CssBtn", "summaryze/static/summaryze/ts/events/StyleListBtns", "summaryze/static/summaryze/ts/events/NotificationEvent"], function (exports_27, context_27) {
     "use strict";
-    var __moduleName = context_25 && context_25.id;
-    function exportStar_7(m) {
+    var __moduleName = context_27 && context_27.id;
+    function exportStar_8(m) {
         var exports = {};
         for (var n in m) {
             if (n !== "default") exports[n] = m[n];
         }
-        exports_25(exports);
+        exports_27(exports);
     }
     return {
         setters: [
+            function (GetSummaryBtn_1_1) {
+                exportStar_8(GetSummaryBtn_1_1);
+            },
             function (SearchBtn_1_1) {
-                exportStar_7(SearchBtn_1_1);
+                exportStar_8(SearchBtn_1_1);
+            },
+            function (UploudBtn_1_1) {
+                exportStar_8(UploudBtn_1_1);
             },
             function (HtmlBtn_1_1) {
-                exportStar_7(HtmlBtn_1_1);
+                exportStar_8(HtmlBtn_1_1);
             },
             function (CssBtn_1_1) {
-                exportStar_7(CssBtn_1_1);
+                exportStar_8(CssBtn_1_1);
             },
             function (StyleListBtns_1_1) {
-                exportStar_7(StyleListBtns_1_1);
+                exportStar_8(StyleListBtns_1_1);
             },
             function (NotificationEvent_2_1) {
-                exportStar_7(NotificationEvent_2_1);
+                exportStar_8(NotificationEvent_2_1);
             }
         ],
         execute: function () {
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/cache/SummaryCache", ["summaryze/static/summaryze/ts/builder/index", "summaryze/static/summaryze/ts/controllers/index", "summaryze/static/summaryze/ts/utils/index"], function (exports_26, context_26) {
+System.register("summaryze/static/summaryze/ts/cache/SummaryCache", ["summaryze/static/summaryze/ts/builder/index", "summaryze/static/summaryze/ts/controllers/index", "summaryze/static/summaryze/ts/utils/index"], function (exports_28, context_28) {
     "use strict";
-    var index_21, index_22, index_23, SummaryCache;
-    var __moduleName = context_26 && context_26.id;
+    var index_26, index_27, index_28, SummaryCache;
+    var __moduleName = context_28 && context_28.id;
     return {
         setters: [
-            function (index_21_1) {
-                index_21 = index_21_1;
+            function (index_26_1) {
+                index_26 = index_26_1;
             },
-            function (index_22_1) {
-                index_22 = index_22_1;
+            function (index_27_1) {
+                index_27 = index_27_1;
             },
-            function (index_23_1) {
-                index_23 = index_23_1;
+            function (index_28_1) {
+                index_28 = index_28_1;
             }
         ],
         execute: function () {
@@ -1234,82 +1315,82 @@ System.register("summaryze/static/summaryze/ts/cache/SummaryCache", ["summaryze/
                 loadCache() {
                     const content = sessionStorage.getItem('summary_html');
                     const styleId = sessionStorage.getItem('summary_css');
-                    if (index_23.ObjectUtils.nonExists(content) || index_23.ObjectUtils.nonExists(styleId)) {
+                    if (index_28.ObjectUtils.nonExists(content) || index_28.ObjectUtils.nonExists(styleId)) {
                         return;
                     }
-                    const summary = new index_21.SummaryBuilder().content(content).style(styleId).build();
-                    const controller = new index_22.SummaryController();
+                    const summary = new index_26.SummaryBuilder().content(content).style(styleId).build();
+                    const controller = new index_27.SummaryController();
                     controller.updateSummary(summary);
                 }
             };
-            exports_26("SummaryCache", SummaryCache);
+            exports_28("SummaryCache", SummaryCache);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/cache/ChangeStyleBtnCache", ["summaryze/static/summaryze/ts/utils/index"], function (exports_27, context_27) {
+System.register("summaryze/static/summaryze/ts/cache/ChangeStyleBtnCache", ["summaryze/static/summaryze/ts/utils/index"], function (exports_29, context_29) {
     "use strict";
-    var index_24, StyleListBtnsCache;
-    var __moduleName = context_27 && context_27.id;
+    var index_29, StyleListBtnsCache;
+    var __moduleName = context_29 && context_29.id;
     return {
         setters: [
-            function (index_24_1) {
-                index_24 = index_24_1;
+            function (index_29_1) {
+                index_29 = index_29_1;
             }
         ],
         execute: function () {
             StyleListBtnsCache = class StyleListBtnsCache {
                 loadCache() {
                     const styleId = sessionStorage.getItem('summary_css');
-                    if (index_24.ObjectUtils.nonExists(styleId)) {
+                    if (index_29.ObjectUtils.nonExists(styleId)) {
                         return;
                     }
                     const btnStyle = document.querySelector(`#${styleId}`);
-                    if (index_24.ObjectUtils.exists(btnStyle)) {
+                    if (index_29.ObjectUtils.exists(btnStyle)) {
                         btnStyle.classList.add('style-list-item-active');
                     }
                 }
             };
-            exports_27("StyleListBtnsCache", StyleListBtnsCache);
+            exports_29("StyleListBtnsCache", StyleListBtnsCache);
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/cache/index", ["summaryze/static/summaryze/ts/cache/SummaryCache", "summaryze/static/summaryze/ts/cache/ChangeStyleBtnCache"], function (exports_28, context_28) {
+System.register("summaryze/static/summaryze/ts/cache/index", ["summaryze/static/summaryze/ts/cache/SummaryCache", "summaryze/static/summaryze/ts/cache/ChangeStyleBtnCache"], function (exports_30, context_30) {
     "use strict";
-    var __moduleName = context_28 && context_28.id;
-    function exportStar_8(m) {
+    var __moduleName = context_30 && context_30.id;
+    function exportStar_9(m) {
         var exports = {};
         for (var n in m) {
             if (n !== "default") exports[n] = m[n];
         }
-        exports_28(exports);
+        exports_30(exports);
     }
     return {
         setters: [
             function (SummaryCache_1_1) {
-                exportStar_8(SummaryCache_1_1);
+                exportStar_9(SummaryCache_1_1);
             },
             function (ChangeStyleBtnCache_1_1) {
-                exportStar_8(ChangeStyleBtnCache_1_1);
+                exportStar_9(ChangeStyleBtnCache_1_1);
             }
         ],
         execute: function () {
         }
     };
 });
-System.register("summaryze/static/summaryze/ts/app", ["summaryze/static/summaryze/ts/events/index", "summaryze/static/summaryze/ts/cache/index", "summaryze/static/summaryze/ts/controllers/index"], function (exports_29, context_29) {
+System.register("summaryze/static/summaryze/ts/app", ["summaryze/static/summaryze/ts/events/index", "summaryze/static/summaryze/ts/cache/index", "summaryze/static/summaryze/ts/controllers/index"], function (exports_31, context_31) {
     "use strict";
-    var index_25, index_26, index_27, App;
-    var __moduleName = context_29 && context_29.id;
+    var index_30, index_31, index_32, App;
+    var __moduleName = context_31 && context_31.id;
     return {
         setters: [
-            function (index_25_1) {
-                index_25 = index_25_1;
+            function (index_30_1) {
+                index_30 = index_30_1;
             },
-            function (index_26_1) {
-                index_26 = index_26_1;
+            function (index_31_1) {
+                index_31 = index_31_1;
             },
-            function (index_27_1) {
-                index_27 = index_27_1;
+            function (index_32_1) {
+                index_32 = index_32_1;
             }
         ],
         execute: function () {
@@ -1320,36 +1401,39 @@ System.register("summaryze/static/summaryze/ts/app", ["summaryze/static/summaryz
                     this.addBtnEvents();
                 }
                 loadCache() {
-                    const summaryCache = new index_26.SummaryCache();
-                    const changeStyleBtnCache = new index_26.StyleListBtnsCache();
+                    const summaryCache = new index_31.SummaryCache();
+                    const changeStyleBtnCache = new index_31.StyleListBtnsCache();
                     summaryCache.loadCache();
                     changeStyleBtnCache.loadCache();
                 }
                 loadStyleList() {
-                    const controller = new index_27.StyleListController();
+                    const controller = new index_32.StyleListController();
                     controller.updateStyleList();
                 }
                 addBtnEvents() {
                     const btnUrlSearch = document.querySelector('#url-search');
+                    const btnHTMLUpload = document.querySelector('#html-upload');
                     const btnShowSummary = document.querySelector('#summary-btn');
                     const btnShowHTML = document.querySelector('#html-btn');
                     const btnShowCSS = document.querySelector('#css-btn');
-                    const summarySearch = new index_25.SearchBtn();
-                    const summaryCache = new index_26.SummaryCache();
-                    const summaryHTML = new index_25.HtmlBtn();
-                    const summaryCSS = new index_25.CssBtn();
-                    btnUrlSearch.addEventListener('click', summarySearch.searchAndShowSummary);
+                    const summarySearchByUrl = new index_30.SearchBtn();
+                    const summarySearchByHTML = new index_30.UploadBtn();
+                    const summaryCache = new index_31.SummaryCache();
+                    const summaryHTML = new index_30.HtmlBtn();
+                    const summaryCSS = new index_30.CssBtn();
+                    btnUrlSearch.addEventListener('click', summarySearchByUrl.sendAndShow);
+                    btnHTMLUpload.addEventListener('click', summarySearchByHTML.sendAndShow);
                     btnShowSummary.addEventListener('click', summaryCache.loadCache);
                     btnShowHTML.addEventListener('click', summaryHTML.showHTML);
                     btnShowCSS.addEventListener('click', summaryCSS.showCSS);
                     const btnsStyleList = document.querySelectorAll('.style-list-item');
                     btnsStyleList.forEach((btn) => {
-                        const event = new index_25.StyleListBtns();
+                        const event = new index_30.StyleListBtns();
                         btn.addEventListener('click', event.applyStyle);
                     });
                 }
             };
-            exports_29("App", App);
+            exports_31("App", App);
         }
     };
 });

@@ -104,13 +104,13 @@ def create_summary(titles):
     :return: a pretty indexed summary in HTML format
     """
 
-    summary = f'<div class="summary-post"><b>Index</b><br>{index_summary(titles)[0]}</div>'
+    summary = f'<div class="summary-post"><b>Índice</b><br>{index_summary(titles)[0]}</div>'
     pretty_summary = BeautifulSoup(summary, 'lxml').body.next.prettify()
 
     return pretty_summary
 
 
-def get_summary(url):
+def get_summary_by_url(url):
     """
     Main function that tries download a page,
     extract its titles and to create a summary.
@@ -119,6 +119,17 @@ def get_summary(url):
     """
 
     html_doc = download_page(url)
+
+    return get_summary_by_html(html_doc)
+
+def get_summary_by_html(html_doc):
+    """
+    Main function that tries download a page,
+    extract its titles and to create a summary.
+    :param url: to generate a summary
+    :return: a pretty indexed summary in HTML format
+    """
+
     titles = get_titles(html_doc)
     summary = create_summary(titles)
 
@@ -136,7 +147,7 @@ def main(args):
         else:
             url = args[1]
 
-        summary = get_summary(url)
+        summary = get_summary_by_url(url)
         print(summary)
     except Exception as e:
         print(f'ERROR: {e}')

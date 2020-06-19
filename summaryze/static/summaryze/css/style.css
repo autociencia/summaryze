@@ -1,5 +1,8 @@
+/*
+* Definitions of colors variables.
+*/
 /**
-* This style is used for export colors to background, color and others elements
+* This style is used for export colors to background, color and others elements.
 */
 .auto-blue {
   background-color: #2c3e50 !important; }
@@ -11,14 +14,17 @@
   color: #8f8f8f !important; }
 
 /**
-* This style is used for stylize URL Search Box and URL components
+* This style is used for stylize URL Search Box and URL components.
 */
-#url-control {
+.custom-field-control {
   width: 100% !important; }
 
-#url-container {
+.custom-field-container {
   justify-content: center !important; }
 
+/*
+* Styles of all buttons on page.
+*/
 .auto-btn-hover {
   transition-duration: 0.3s; }
   .auto-btn-hover:hover {
@@ -49,6 +55,12 @@
 .auto-tab a .icon:last-child {
   margin-left: 0 !important; }
 
+#html-upload {
+  height: 100%; }
+
+/*
+* Style of list of styles menu.
+*/
 .style-list-item {
   display: block;
   padding: 5px;
@@ -67,6 +79,9 @@
   color: #fff;
   background-color: #2c3e50; }
 
+/*
+* Style of container where summary is displayed.
+*/
 .summary-content-container {
   height: 500px;
   overflow: auto; }
@@ -75,6 +90,9 @@
   font-size: inherit !important;
   background-color: transparent !important; }
 
+/*
+* Style of footer page.
+*/
 #footer-credits {
   width: 100%;
   padding: 10px;
@@ -100,5 +118,9 @@
   color: #A8B5C4;
   text-decoration: none;
   outline: 0px solid #FFFFFF; }
+
+#notification-area {
+  position: absolute;
+  z-index: 999; }
 
 /*# sourceMappingURL=style.css.map */

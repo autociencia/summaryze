@@ -4,14 +4,15 @@
 
 export class HttpClient {
 
-    fetchPage(url: string, callback: Function, errorFunction: Function): void {
+    fetchPage(url: string, content: Object, callback: Function, errorFunction: Function): void {
         $.ajax({
-            type: 'GET',
+            type: 'POST',
             cache: false,
             url: url,
+            data: content,
             success: (data) => callback(data),
             dataType: 'html',
-            contentType: 'text',
+            contentType: 'application/json; charset=utf-8',
             error: (response) => errorFunction(response.responseText)
         });
     }
