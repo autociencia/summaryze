@@ -1,5 +1,13 @@
 from summaryze.api import summaryze as api
 
+"""
+A service layer between routes and api.
+This software is available under GPL license.
+Author: Autociência
+Year: 2020
+License: GNU GENERAL PUBLIC LICENSE (GPL)
+"""
+
 def get_summary_by_url(json_request):
     """
     Receives a URL by JSON and returns an HTML summary.
