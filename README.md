@@ -80,7 +80,11 @@ $ grunt
 ## :whale: Docker
 You can run this app using Docker. Enter on project and run (as superuser):
 ```bash
+# Old way to build:
 docker build -t summaryze:latest .
+# New way to build:
+docker buildx build --tag summaryze:latest .
+
 docker run --name summaryze -d -p 5000:5000 summaryze:latest
 docker ps
 ```
