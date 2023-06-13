@@ -89,7 +89,7 @@ class TestSummary(unittest.TestCase):
                 <li><a href="#ANCHOR">Title Five</a></li>
             </ol>
         </div>"""
-        expected_summary = BeautifulSoup(str_expected, 'lxml').body.next.prettify()
+        expected_summary = BeautifulSoup(str_expected, 'html.parser').prettify()
 
         self.assertEqual(summary, expected_summary)
 
@@ -140,7 +140,7 @@ class TestSummary(unittest.TestCase):
                 </li>
             </ol>
         </div>"""
-        expected_summary = BeautifulSoup(str_expected, 'lxml').body.next.prettify()
+        expected_summary = BeautifulSoup(str_expected, 'html.parser').prettify()
 
         self.assertEqual(summary, expected_summary)
 
@@ -182,7 +182,7 @@ class TestSummary(unittest.TestCase):
                 <li><a href="#ANCHOR">Title Five</a></li>
             </ol>
         </div>"""
-        expected_summary = BeautifulSoup(str_expected, 'lxml').body.next.prettify()
+        expected_summary = BeautifulSoup(str_expected, 'html.parser').prettify()
 
         self.assertEqual(summary, expected_summary)
 
@@ -217,7 +217,7 @@ class TestSummary(unittest.TestCase):
                 <li><a href="#ANCHOR">Title Two</a></li>
             </ol>
         </div>"""
-        expected_summary = BeautifulSoup(str_expected, 'lxml').body.next.prettify()
+        expected_summary = BeautifulSoup(str_expected, 'html.parser').prettify()
 
         self.assertEqual(summary, expected_summary)
 

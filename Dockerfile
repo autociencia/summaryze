@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.18
 LABEL maintainer="https://autociencia.blogspot.com"
 
 WORKDIR /home
@@ -14,7 +14,7 @@ RUN pip3 install --upgrade pip
 
 # Build dependencies
 RUN apk add --no-cache --virtual .build-deps \
-    gcc libc-dev libxml2-dev libxslt-dev python3-dev
+    gcc musl-dev make python3-dev
 
 # Project's setup
 RUN git clone https://github.com/autociencia/summaryze.git

@@ -81,7 +81,7 @@ $ grunt
 You can run this app using Docker. Enter on project and run (as superuser):
 ```bash
 docker build -t summaryze:latest .
-docker run --name summaryze -d -p 5000:5000 autociencia/summaryze:latest
+docker run --name summaryze -d -p 5000:5000 summaryze:latest
 docker ps
 ```
 You may omit ``-d`` argument to run this app as non daemon and see server logs on terminal.

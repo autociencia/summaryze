@@ -1,6 +1,6 @@
 {
   "name": "summaryze",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Summary generator for blogspot articles",
   "main": "index.js",
   "directories": {

@@ -105,7 +105,7 @@ def create_summary(titles):
     """
 
     summary = f'<div class="summary-post"><b>Índice</b><br>{index_summary(titles)[0]}</div>'
-    pretty_summary = BeautifulSoup(summary, 'lxml').body.next.prettify()
+    pretty_summary = BeautifulSoup(summary, 'html.parser').prettify()
 
     return pretty_summary
 
